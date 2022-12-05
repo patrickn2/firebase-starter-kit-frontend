@@ -1,16 +1,15 @@
-import React from 'react';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import {grey} from '@mui/material/colors';
-import {Fonts} from 'shared/constants/AppEnums';
-import {initialUrl} from 'shared/constants/AppConst';
 import AppAnimate from '@crema/core/AppAnimate';
 import IntlMessages from '@crema/utility/IntlMessages';
-// @ts-ignore
+import { useTheme } from '@mui/material';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import { grey } from '@mui/material/colors';
+import Typography from '@mui/material/Typography';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { initialUrl } from 'shared/constants/AppConst';
+import { Fonts } from 'shared/constants/AppEnums';
 import Logo from '../../../assets/icon/500.svg';
-import {useTheme} from '@mui/material';
-import {useRouter} from 'next/router';
 
 const Error500 = () => {
   const theme = useTheme();
@@ -24,7 +23,7 @@ const Error500 = () => {
     <AppAnimate animation='transition.slideUpIn' delay={200}>
       <Box
         sx={{
-          py: {xl: 8},
+          py: { xl: 8 },
           flex: 1,
           display: 'flex',
           flexDirection: 'column',
@@ -35,7 +34,7 @@ const Error500 = () => {
       >
         <Box
           sx={{
-            mb: {xs: 4, xl: 8},
+            mb: { xs: 4, xl: 8 },
             width: '100%',
             '& svg': {
               width: '100%',
@@ -47,14 +46,14 @@ const Error500 = () => {
         </Box>
         <Box
           sx={{
-            mb: {xs: 4, xl: 5},
+            mb: { xs: 4, xl: 5 },
           }}
         >
           <Box
             component='h3'
             sx={{
-              mb: {xs: 3, xl: 4},
-              fontSize: {xs: 20, md: 24},
+              mb: { xs: 3, xl: 4 },
+              fontSize: { xs: 20, md: 24 },
               fontWeight: Fonts.MEDIUM,
             }}
           >
@@ -62,7 +61,7 @@ const Error500 = () => {
           </Box>
           <Box
             sx={{
-              mb: {xs: 4, xl: 5},
+              mb: { xs: 4, xl: 5 },
               color: grey[600],
               fontSize: 16,
               fontWeight: Fonts.MEDIUM,

@@ -1,34 +1,33 @@
-import React, {useState} from 'react';
-import IconButton from '@mui/material/IconButton';
-import Drawer from '@mui/material/Drawer';
-import Box from '@mui/material/Box';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
-
-import {orange} from '@mui/material/colors';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import Box from '@mui/material/Box';
+import { orange } from '@mui/material/colors';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import React, { useState } from 'react';
+import { useLayoutContext } from '../../../providers/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../shared/constants/AppEnums';
 import IntlMessages from '../../utility/IntlMessages';
-import {LayoutType} from '../../../shared/constants/AppEnums';
-import {useLayoutContext} from '../../utility/AppContextProvider/LayoutContextProvider';
 import AppScrollbar from '../AppScrollbar';
-import ThemeColors from './ThemeColors';
-import ThemeFooter from './ThemeFooter';
-import ThemeModes from './ThemeModes';
-import ThemeDirection from './ThemeDirection';
-import SidebarSettings from './SidebarSettings';
-import NavStyles from './NavStyles';
 import LayoutTypes from './LayoutTypes';
+import NavStyles from './NavStyles';
+import SidebarSettings from './SidebarSettings';
+import ThemeColors from './ThemeColors';
+import ThemeDirection from './ThemeDirection';
+import ThemeFooter from './ThemeFooter';
 import ThemeHeader from './ThemeHeader';
+import ThemeModes from './ThemeModes';
 
 const AppThemeSetting = () => {
   const [isSettingOpen, setSettingOpen] = useState(false);
   const [isColorSettingOpen, setColorSettingOpen] = useState(false);
-  const {layoutType} = useLayoutContext();
+  const { layoutType } = useLayoutContext();
   return (
     <Box
       sx={{
         position: 'fixed',
         right: 0,
-        top: {xs: 85, xl: 125},
+        top: { xs: 85, xl: 125 },
         zIndex: 1110,
       }}
       className='customizerOption'
@@ -97,12 +96,12 @@ const AppThemeSetting = () => {
       >
         <AppScrollbar
           sx={{
-            width: {xs: 300, md: 360, xl: 400},
+            width: { xs: 300, md: 360, xl: 400 },
           }}
         >
           <Box
             sx={{
-              padding: {xs: '20px', xl: '28px 22px'},
+              padding: { xs: '20px', xl: '28px 22px' },
               borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
             }}
           >
@@ -115,7 +114,7 @@ const AppThemeSetting = () => {
           </Box>
           <Box
             sx={{
-              padding: {xs: '20px', xl: '28px 22px'},
+              padding: { xs: '20px', xl: '28px 22px' },
             }}
           >
             <NavStyles />
@@ -140,12 +139,12 @@ const AppThemeSetting = () => {
       >
         <AppScrollbar
           sx={{
-            width: {xs: 300, md: 360, xl: 400},
+            width: { xs: 300, md: 360, xl: 400 },
           }}
         >
           <Box
             sx={{
-              padding: {xs: '20px', xl: '28px 22px'},
+              padding: { xs: '20px', xl: '28px 22px' },
               borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
             }}
           >
@@ -158,7 +157,7 @@ const AppThemeSetting = () => {
           </Box>
           <Box
             sx={{
-              padding: {xs: '20px', xl: '28px 22px'},
+              padding: { xs: '20px', xl: '28px 22px' },
             }}
           >
             <ThemeModes />

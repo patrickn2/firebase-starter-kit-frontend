@@ -1,7 +1,7 @@
-import React, {ReactNode} from 'react';
+import { Theme } from '@mui/material';
 import TableContainer from '@mui/material/TableContainer';
-import {Theme} from '@mui/material';
-import {SxProps} from '@mui/system';
+import { SxProps } from '@mui/system';
+import React, { ReactNode } from 'react';
 
 interface AppTableContainerProps {
   children: ReactNode;

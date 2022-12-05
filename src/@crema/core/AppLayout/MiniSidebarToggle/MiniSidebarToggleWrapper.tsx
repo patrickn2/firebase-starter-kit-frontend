@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface MiniSidebarToggleWrapperProps {
   children: ReactNode;
@@ -23,17 +23,17 @@ const MiniSidebarToggleWrapper: React.FC<MiniSidebarToggleWrapperProps> = ({
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
-          width: {xs: '100%', lg: 'calc(100% - 280px)'},
+          width: { xs: '100%', lg: 'calc(100% - 280px)' },
           transition: 'all 0.5s ease',
-          ml: {lg: '280px'},
+          ml: { lg: '280px' },
         },
         '&.mini-sidebar-collapsed': {
           '& .mainContent': {
-            width: {lg: 'calc(100% - 64px)'},
-            ml: {lg: '64px'},
+            width: { lg: 'calc(100% - 64px)' },
+            ml: { lg: '64px' },
           },
           '& .mini-toggle-sidebar:not(:hover)': {
-            width: {lg: 64},
+            width: { lg: 64 },
             '& .user-info, & .nav-item-header, & .nav-item-content, & .menu-badge, & .collapse-children, & .nav-item-icon-arrow-btn':
               {
                 display: 'none',
@@ -44,7 +44,7 @@ const MiniSidebarToggleWrapper: React.FC<MiniSidebarToggleWrapperProps> = ({
             },
           },
           '&.appMainFixedHeader .app-bar': {
-            width: {lg: 'calc(100% - 64px)'},
+            width: { lg: 'calc(100% - 64px)' },
           },
           '& .menu-vertical-item': {
             pl: 3,
@@ -82,10 +82,10 @@ const MiniSidebarToggleWrapper: React.FC<MiniSidebarToggleWrapperProps> = ({
           },
         },
         '&.appMainFixedFooter': {
-          pb: {xs: 12, xl: 14.5},
+          pb: { xs: 12, xl: 14.5 },
         },
         '&.appMainFixedHeader': {
-          pt: {xs: 14, sm: 17.5},
+          pt: { xs: 14, sm: 17.5 },
           '& .app-bar': {
             position: 'fixed',
             top: 0,

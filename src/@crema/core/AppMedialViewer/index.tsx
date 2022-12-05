@@ -1,14 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import Dialog from '@mui/material/Dialog';
-import IconButton from '@mui/material/IconButton';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider, {Settings} from 'react-slick';
-import Zoom from '@mui/material/Zoom';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import Box from '@mui/material/Box';
+import Dialog from '@mui/material/Dialog';
+import IconButton from '@mui/material/IconButton';
+import { TransitionProps } from '@mui/material/transitions';
+import Zoom from '@mui/material/Zoom';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import Slider, { Settings } from 'react-slick';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import MediaSlider from './MediaSlider';
-import {TransitionProps} from '@mui/material/transitions';
 
 const settings: Settings = {
   dots: false,
@@ -23,7 +24,7 @@ const settings: Settings = {
 const renderRow = (data: any, index: number) => {
   if (data.mime_type.startsWith('image')) {
     return (
-      <img
+      <Image
         key={'IMAGE-' + index}
         src={data.url}
         alt={data.name ? data.name : 'detail view'}

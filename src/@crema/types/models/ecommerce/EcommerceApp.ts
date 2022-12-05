@@ -57,16 +57,6 @@ export interface ProductData {
   }[];
 }
 
-export interface RecentOrders {
-  id: string;
-  customer: string;
-  product: string;
-  date: string;
-  paymentType: string;
-  price: string;
-  status: string;
-}
-
 export interface FilterData {
   title: string;
   page?: string | number;

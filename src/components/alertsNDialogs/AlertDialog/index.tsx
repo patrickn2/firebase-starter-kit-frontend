@@ -6,7 +6,6 @@ import {
   DialogContentText,
   DialogTitle,
 } from '@mui/material';
-import { useEffect, useState } from 'react';
 
 export interface AlertDialogProps {
   title?: string;

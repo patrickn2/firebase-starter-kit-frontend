@@ -1,6 +1,7 @@
-import React from 'react';
+import { Box } from '@mui/material';
 import Hidden from '@mui/material/Hidden';
-import {Box} from '@mui/material';
+import Image from 'next/image';
+import React from 'react';
 
 const AppLogoWhite = () => {
   return (
@@ -13,7 +14,7 @@ const AppLogoWhite = () => {
       }}
     >
       <Hidden smUp>
-        <img
+        <Image
           style={{
             height: 30,
             marginRight: 10,
@@ -23,7 +24,7 @@ const AppLogoWhite = () => {
         />
       </Hidden>
       <Hidden smDown>
-        <img
+        <Image
           style={{
             height: 30,
             marginRight: 10,

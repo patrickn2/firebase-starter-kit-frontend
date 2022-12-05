@@ -1,6 +1,6 @@
-import React, {createContext, useCallback, useContext, useState} from 'react';
 import PropTypes from 'prop-types';
-import defaultConfig, {SidebarData} from './defaultConfig';
+import React, { createContext, useCallback, useContext, useState } from 'react';
+import defaultConfig, { SidebarData } from './defaultConfig';
 
 export interface SidebarContextData {
   menuStyle: string;
@@ -41,7 +41,7 @@ export const useSidebarContext = () => useContext(SidebarContext);
 
 export const useSidebarActionsContext = () => useContext(SidebarActionsContext);
 
-const SidebarContextProvider: React.FC<React.ReactNode> = ({children}) => {
+const SidebarContextProvider: React.FC<React.ReactNode> = ({ children }) => {
   const [menuStyle, updateMenuStyle] = useState<string>(
     defaultConfig.sidebar.menuStyle,
   );

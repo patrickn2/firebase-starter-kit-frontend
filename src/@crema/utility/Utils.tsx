@@ -1,6 +1,5 @@
 import { Breakpoint } from '@mui/system';
 import moment from 'moment';
-import { authRole } from '../../shared/constants/AppConst';
 
 export const getBreakPointsValue = (valueSet: any, breakpoint: Breakpoint) => {
   if (typeof valueSet === 'number') return valueSet;
@@ -22,10 +21,10 @@ export const getBreakPointsValue = (valueSet: any, breakpoint: Breakpoint) => {
 
 export const getFileSize = (bytes: number) => {
   if (bytes === 0) return '0 Bytes';
-  let k = 1024,
-    dm = 2,
-    sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-    i = Math.floor(Math.log(bytes) / Math.log(k));
+  const k = 1024;
+  const dm = 2;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 };
 
@@ -52,19 +51,6 @@ export const multiPropsFilter = (
   });
 };
 
-export const getCustomDateTime = (
-  value = 0,
-  unit = 'days',
-  format = 'YYYY-MM-DD',
-) => {
-  if (value === 0) {
-    return moment().format(format);
-  } else {
-    // @ts-ignore
-    return moment().add(value, unit).format(format);
-  }
-};
-
 export const timeFromNow = (date: any) => {
   const timestamp = moment(date).format('X');
   const newDate = moment.unix(Number(timestamp));
@@ -73,55 +59,4 @@ export const timeFromNow = (date: any) => {
 
 export const generateUniqueID = () => {
   return `v1-${Date.now()}-${Math.floor(Math.random() * (9e12 - 1)) + 1e12}`;
-};
-
-export const getUserFromAuth0 = (user: any) => {
-  if (user)
-    return {
-      id: 1,
-      uid: user.sub,
-      displayName: user.name,
-      email: user.email,
-      photoURL: user.picture,
-      role: authRole.user,
-    };
-  return user;
-};
-
-// export const getUserFromFirebase = (user: any) => {
-//   if (user)
-//     return {
-//       id: 1,
-//       uid: user.uid,
-//       displayName: user.displayName ? user.displayName : 'Crema User',
-//       email: user.email,
-//       photoURL: user.photoURL,
-//       role: authRole.user,
-//     };
-//   return user;
-// };
-export const getUserFromAWS = (user: any) => {
-  if (user)
-    return {
-      id: 1,
-      uid: user.username,
-      displayName: user.attributes.name ? user.attributes.name : 'Crema User',
-      email: user.attributes.email,
-      photoURL: user.photoURL,
-      role: authRole.user,
-    };
-  return user;
-};
-
-export const getUserFromJwtAuth = (user: any) => {
-  if (user)
-    return {
-      id: 1,
-      uid: user._id,
-      displayName: user.name,
-      email: user.email,
-      photoURL: user.avatar,
-      role: authRole.user,
-    };
-  return user;
 };

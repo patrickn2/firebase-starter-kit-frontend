@@ -2,13 +2,12 @@ import moment from 'moment';
 
 export const getFormattedDateTime = (
   value = 0,
-  unit = 'days',
+  unit: moment.unitOfTime.DurationConstructor = 'days',
   format = 'YYYY-MM-DD',
 ) => {
   if (value === 0) {
     return moment().format(format);
   } else {
-    // @ts-ignore
     return moment().add(value, unit).format(format);
   }
 };

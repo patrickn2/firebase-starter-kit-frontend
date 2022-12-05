@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface UserMiniHeaderSidebarWrapperProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface UserMiniHeaderSidebarWrapperProps {
 
 const UserMiniHeaderSidebarWrapper: React.FC<
   UserMiniHeaderSidebarWrapperProps
-> = ({children, ...rest}) => {
+> = ({ children, ...rest }) => {
   return (
     <Box
       sx={{
@@ -17,8 +17,8 @@ const UserMiniHeaderSidebarWrapper: React.FC<
         display: 'flex',
         flexDirection: 'column',
         transition: 'all 0.5s ease',
-        position: {xs: 'relative', lg: 'fixed'},
-        top: {xs: 0, lg: 71},
+        position: { xs: 'relative', lg: 'fixed' },
+        top: { xs: 0, lg: 71 },
         left: 0,
         zIndex: 1101,
         '& .app-sidebar': {

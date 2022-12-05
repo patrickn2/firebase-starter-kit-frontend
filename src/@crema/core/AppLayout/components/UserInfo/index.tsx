@@ -1,12 +1,12 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Box, Link } from '@mui/material';
+import { Box } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import orange from '@mui/material/colors/orange';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
+import { useAuthMethod, useAuthUser } from '../../../../../hooks/useAuthUser';
 import { Fonts } from '../../../../../shared/constants/AppEnums';
-import { useAuthMethod, useAuthUser } from '../../../../utility/AuthHooks';
 
 interface UserInfoProps {
   color?: string;

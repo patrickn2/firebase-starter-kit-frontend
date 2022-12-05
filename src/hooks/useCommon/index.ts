@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   clearAlertErrorMessage,
   Common,
@@ -9,11 +9,11 @@ import {
   showAlert,
   showMessage,
 } from 'redux/slices/common';
-import type { RootState } from 'redux/store';
+import { RootState, useAppDispatch } from 'redux/store';
 
 export function useCommon() {
   const common = useSelector((state: RootState) => state.common);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return {
     common,

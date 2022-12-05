@@ -1,18 +1,18 @@
-import React from 'react';
-import BucketMinibarWrapper from './BucketMinibarWrapper';
+import SearchIcon from '@mui/icons-material/Search';
+import { SimplePaletteColorOptions } from '@mui/material';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+import React from 'react';
+import Logo from '../../../../../../assets/icon/logo.svg';
+import { useThemeContext } from '../../../../../../providers/AppContextProvider/ThemeContextProvider';
 import AppLngSwitcher from '../../../../AppLngSwitcher';
-import {useThemeContext} from '../../../../../utility/AppContextProvider/ThemeContextProvider';
 import AppMessages from '../../../../AppMessages';
 import AppNotifications from '../../../../AppNotifications';
 import UserInfo from '../UserInfo';
-// @ts-ignore
-import Logo from '../../../../../../assets/icon/logo.svg';
+import BucketMinibarWrapper from './BucketMinibarWrapper';
 
 const BucketMinibar = () => {
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
 
   return (
     <BucketMinibarWrapper>
@@ -32,7 +32,9 @@ const BucketMinibar = () => {
           }}
           aria-label='show 17 new notifications'
         >
-          <Logo fill={theme.palette.primary.main} />
+          <Logo
+            fill={(theme.palette?.primary as SimplePaletteColorOptions).main}
+          />
         </IconButton>
 
         <IconButton
@@ -46,12 +48,12 @@ const BucketMinibar = () => {
         <AppNotifications
           drawerPosition='left'
           tooltipPosition='right'
-          sxNotificationContentStyle={{width: 320}}
+          sxNotificationContentStyle={{ width: 320 }}
         />
         <AppMessages
           drawerPosition='left'
           tooltipPosition='right'
-          sxMessageContentStyle={{width: 320}}
+          sxMessageContentStyle={{ width: 320 }}
         />
       </Box>
       <Box

@@ -1,6 +1,6 @@
-import { useAuthUser } from '@crema/utility/AuthHooks';
 import { Box } from '@mui/material';
 import { Formik } from 'formik';
+import { useAuthUser } from 'hooks/useAuthUser';
 import PropTypes from 'prop-types';
 import React from 'react';
 import * as yup from 'yup';
@@ -30,7 +30,7 @@ const PersonalInfo = () => {
         validationSchema={validationSchema}
         onSubmit={(data, { setSubmitting }) => {
           setSubmitting(true);
-          //Save Data
+          // Save Data
           setSubmitting(false);
         }}
       >

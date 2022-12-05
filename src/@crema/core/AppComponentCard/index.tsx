@@ -1,16 +1,16 @@
-import React, {ReactNode, useState} from 'react';
-import {Card} from '@mui/material';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
 import CodeIcon from '@mui/icons-material/Code';
-import Highlight, {defaultProps} from 'prism-react-renderer';
-import IconButton from '@mui/material/IconButton';
-import Collapse from '@mui/material/Collapse';
-import AppScrollbar from '../AppScrollbar';
-import {highlightTheme} from './highlightTheme';
+import { Card } from '@mui/material';
 import Box from '@mui/material/Box';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import React, { ReactNode, useState } from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AppAnimate from '../AppAnimate';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import AppScrollbar from '../AppScrollbar';
+import { highlightTheme } from './highlightTheme';
 
 interface AppComponentCardProps {
   title: ReactNode;
@@ -80,7 +80,7 @@ const AppComponentCard: React.FC<AppComponentCardProps> = ({
           }
         />
 
-        <CardContent sx={{px: 4, pt: 0}}>
+        <CardContent sx={{ px: 4, pt: 0 }}>
           <Collapse in={animation}>
             {viewSource ? (
               <AppScrollbar
@@ -95,7 +95,7 @@ const AppComponentCard: React.FC<AppComponentCardProps> = ({
                   language='jsx'
                   theme={highlightTheme}
                 >
-                  {({style, tokens, getLineProps, getTokenProps}) => (
+                  {({ style, tokens, getLineProps, getTokenProps }) => (
                     <pre
                       style={{
                         ...style,
@@ -107,12 +107,12 @@ const AppComponentCard: React.FC<AppComponentCardProps> = ({
                       {tokens.map((line, i) => (
                         <Box
                           key={'line-' + i}
-                          {...getLineProps({line, key: i})}
+                          {...getLineProps({ line, key: i })}
                         >
                           {line.map((token, key) => (
                             <span
                               key={'token-' + key}
-                              {...getTokenProps({token, key})}
+                              {...getTokenProps({ token, key })}
                             />
                           ))}
                         </Box>

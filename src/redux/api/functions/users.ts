@@ -17,7 +17,7 @@ export const fetchUsers = async ({
     status: false,
   } as FetchUsersResponse;
 
-  const url = process.env.NEXT_PUBLIC_FUNCTIONS_PATH + 'fetchUsers';
+  const url = `${process.env.NEXT_PUBLIC_FUNCTIONS_PATH as string}fetchUsers`;
 
   const body = {
     page: page ?? 1,
@@ -55,7 +55,9 @@ export const switchUserRole = async ({
     status: false,
   } as BaseResponse;
 
-  const url = process.env.NEXT_PUBLIC_FUNCTIONS_PATH + 'switchUserRole';
+  const url = `${
+    process.env.NEXT_PUBLIC_FUNCTIONS_PATH as string
+  }switchUserRole`;
 
   const body = {
     userId,
@@ -92,7 +94,7 @@ export const banUnbanUser = async ({
     status: false,
   } as BaseResponse;
 
-  const url = process.env.NEXT_PUBLIC_FUNCTIONS_PATH + 'banUnbanUser';
+  const url = `${process.env.NEXT_PUBLIC_FUNCTIONS_PATH as string}banUnbanUser`;
 
   const body = {
     userId,

@@ -1,7 +1,7 @@
-import React, {CSSProperties, ReactNode} from 'react';
-import {Box} from '@mui/material';
-import {Fonts} from '../../../shared/constants/AppEnums';
-import {getBreakPointsValue} from '../../utility/Utils';
+import { Box } from '@mui/material';
+import React, { CSSProperties, ReactNode } from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
+import { getBreakPointsValue } from '../../utility/Utils';
 
 const withWidth = () => (WrappedComponent: any) => (props: any) =>
   <WrappedComponent {...props} width='xs' />;
@@ -64,11 +64,11 @@ const AppSemiCircleProgress: React.FC<AppSemiCircleProgressProps> = ({
   }
 
   return (
-    <Box sx={{width: actualDiameter}} style={{position: 'relative'}}>
+    <Box sx={{ width: actualDiameter }} style={{ position: 'relative' }}>
       <svg
         width={actualDiameter}
         height={actualDiameter / 2}
-        style={{transform: rotation, overflow: 'hidden'}}
+        style={{ transform: rotation, overflow: 'hidden' }}
       >
         <circle
           cx={coordinateForCircle}
@@ -116,7 +116,7 @@ const AppSemiCircleProgress: React.FC<AppSemiCircleProgressProps> = ({
           <Box
             component='span'
             sx={{
-              fontSize: {xs: 18, sm: 20, xl: 22},
+              fontSize: { xs: 18, sm: 20, xl: 22 },
               fontWeight: Fonts.LIGHT,
             }}
           >
@@ -125,7 +125,7 @@ const AppSemiCircleProgress: React.FC<AppSemiCircleProgressProps> = ({
           <Box
             component='span'
             sx={{
-              fontSize: {xs: 16, sm: 18, xl: 20},
+              fontSize: { xs: 16, sm: 18, xl: 20 },
               textTransform: 'uppercase',
               color: (theme) => theme.palette.text.secondary,
             }}

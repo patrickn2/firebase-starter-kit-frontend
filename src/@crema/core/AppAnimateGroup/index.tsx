@@ -169,7 +169,7 @@
 //
 // export default memo(AppAnimateGroup);
 
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from 'react';
 
 interface AppAnimateGroupProps {
   children: ReactNode;

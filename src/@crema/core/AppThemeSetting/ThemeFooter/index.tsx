@@ -1,33 +1,33 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 import Switch from '@mui/material/Switch';
-import {FooterType} from '../../../../shared/constants/AppEnums';
+import React from 'react';
 import {
   useLayoutActionsContext,
   useLayoutContext,
-} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import {CustomizerItemWrapper} from '../index.style';
+} from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { FooterType } from '../../../../shared/constants/AppEnums';
+import { CustomizerItemWrapper } from '../index.style';
 
 const ThemeFooter = () => {
-  const {footer} = useLayoutContext();
-  const {setFooter} = useLayoutActionsContext();
-  const {footerType} = useLayoutContext();
-  const {setFooterType} = useLayoutActionsContext();
+  const { footer } = useLayoutContext();
+  const { setFooter } = useLayoutActionsContext();
+  const { footerType } = useLayoutContext();
+  const { setFooterType } = useLayoutActionsContext();
 
   return (
     <CustomizerItemWrapper>
-      <Box sx={{display: 'flex', alignItems: 'center', mb: 4}}>
+      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
         <Box component='h4'>Footer</Box>
         <Box component='span' ml='auto'>
           <Switch
             checked={footer}
             onChange={() => setFooter(!footer)}
             value='checkedA'
-            inputProps={{'aria-label': 'secondary checkbox'}}
+            inputProps={{ 'aria-label': 'secondary checkbox' }}
           />
         </Box>
       </Box>

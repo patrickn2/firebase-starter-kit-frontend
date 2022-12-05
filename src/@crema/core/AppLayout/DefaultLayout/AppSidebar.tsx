@@ -2,9 +2,9 @@ import Drawer from '@mui/material/Drawer';
 import Hidden from '@mui/material/Hidden';
 import clsx from 'clsx';
 import React from 'react';
-import {useSettings} from '../../../../hooks/useSettings';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import {useSidebarContext} from '../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSettings } from '../../../../hooks/useSettings';
+import { useLayoutContext } from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { useSidebarContext } from '../../../../providers/AppContextProvider/SidebarContextProvider';
 import AppScrollbar from '../../AppScrollbar';
 import MainSidebar from '../components/MainSidebar';
 import UserInfo from '../components/UserInfo';
@@ -19,11 +19,11 @@ const AppSidebar: React.FC<AppSidebarProps> = ({
   variant = '',
   position = 'left',
 }) => {
-  const {settings, toggleNavCollapsed} = useSettings();
+  const { settings, toggleNavCollapsed } = useSettings();
 
-  const {footer, footerType} = useLayoutContext();
+  const { footer, footerType } = useLayoutContext();
 
-  const {sidebarTextColor} = useSidebarContext();
+  const { sidebarTextColor } = useSidebarContext();
 
   return (
     <>
@@ -36,7 +36,7 @@ const AppSidebar: React.FC<AppSidebarProps> = ({
             root: clsx(variant),
             paper: clsx(variant),
           }}
-          style={{position: 'absolute'}}
+          style={{ position: 'absolute' }}
         >
           <MainSidebar>
             <UserInfo color={sidebarTextColor} />
@@ -44,7 +44,7 @@ const AppSidebar: React.FC<AppSidebarProps> = ({
               sx={{
                 py: 2,
                 height: 'calc(100vh - 70px) !important',
-                borderTop: (theme: {palette: {divider: string}}) =>
+                borderTop: (theme: { palette: { divider: string } }) =>
                   `solid 1px ${theme.palette.divider}`,
                 mt: 0.5,
               }}
@@ -64,7 +64,7 @@ const AppSidebar: React.FC<AppSidebarProps> = ({
             sx={{
               py: 2,
               height: 'calc(100vh - 70px) !important',
-              borderTop: (theme: {palette: {divider: string}}) =>
+              borderTop: (theme: { palette: { divider: string } }) =>
                 `solid 1px ${theme.palette.divider}`,
               mt: 0.5,
               '&.has-footer-fixed': {

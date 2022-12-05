@@ -9,13 +9,13 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { Provider } from 'react-redux';
 import { store } from 'redux/store';
 import '../../public/assets/styles/index.css';
-import AppContextProvider from '../@crema/utility/AppContextProvider';
-import AppLocaleProvider from '../@crema/utility/AppLocaleProvider';
-import AppStyleProvider from '../@crema/utility/AppStyleProvider';
-import AppThemeProvider from '../@crema/utility/AppThemeProvider';
 import AuthRoutes from '../@crema/utility/AuthRoutes';
 import createEmotionCache from '../createEmotionCache';
-import FirebaseAuthProvider from '../services/firebase/FirebaseAuthProvider';
+import AppContextProvider from '../providers/AppContextProvider';
+import AppLocaleProvider from '../providers/AppLocaleProvider';
+import AppStyleProvider from '../providers/AppStyleProvider';
+import AppThemeProvider from '../providers/AppThemeProvider';
+import FirebaseAuthProvider from '../providers/FirebaseAuthProvider';
 import '../shared/vendors/index.css';
 
 // Client-side cache, shared for the whole session of the user in the browser.

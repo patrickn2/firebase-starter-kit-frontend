@@ -1,9 +1,9 @@
-import React, {CSSProperties, ReactNode, useEffect, useState} from 'react';
-import {useBottomScrollListener} from 'react-bottom-scroll-listener';
-import {Box, Theme, useTheme} from '@mui/material';
+import { Box, Theme, useTheme } from '@mui/material';
+import { SxProps } from '@mui/system';
+import React, { CSSProperties, ReactNode, useEffect, useState } from 'react';
+import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import { useWidth } from '../../utility/helper/Utils';
 import AppAnimateGroup from '../AppAnimateGroup';
-import {useWidth} from '../../utility/helper/Utils';
-import {SxProps} from '@mui/system';
 
 interface GridViewProps {
   sx?: SxProps<Theme>;
@@ -117,9 +117,9 @@ const GridView: React.FC<GridViewProps> = ({
 
   let style = containerStyle;
   if (border) {
-    style = {...style, ...borderStyle};
+    style = { ...style, ...borderStyle };
   }
-  useBottomScrollListener(onEndReached, {debounce: 200});
+  useBottomScrollListener(onEndReached, { debounce: 200 });
   return (
     <Box
       sx={{

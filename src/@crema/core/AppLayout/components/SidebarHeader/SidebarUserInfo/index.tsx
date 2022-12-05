@@ -5,9 +5,12 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
+import {
+  useAuthMethod,
+  useAuthUser,
+} from '../../../../../../hooks/useAuthUser';
+import { useSidebarContext } from '../../../../../../providers/AppContextProvider/SidebarContextProvider';
 import { Fonts } from '../../../../../../shared/constants/AppEnums';
-import { useSidebarContext } from '../../../../../utility/AppContextProvider/SidebarContextProvider';
-import { useAuthMethod, useAuthUser } from '../../../../../utility/AuthHooks';
 import Status from './Status';
 
 const SidebarUserInfo = () => {
@@ -42,7 +45,7 @@ const SidebarUserInfo = () => {
         alignItems: 'center',
         textAlign: 'center',
         padding: '15px 10px 25px',
-        borderBottom: `dashed 1px ${alpha(borderColor!, 0.4)}`,
+        borderBottom: `dashed 1px ${alpha(borderColor ?? '', 0.4)}`,
       }}
     >
       {user?.photoURL ? (

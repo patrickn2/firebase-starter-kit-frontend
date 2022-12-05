@@ -13,7 +13,6 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import { Fonts } from 'shared/constants/AppEnums';
 import * as yup from 'yup';
-// @ts-ignore
 import Logo from '../../../assets/icon/comingsoon.svg';
 
 const FormWrapper = styled(Form)(() => {

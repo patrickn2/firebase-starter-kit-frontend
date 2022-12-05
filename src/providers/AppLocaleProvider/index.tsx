@@ -1,15 +1,15 @@
-import React, {ReactNode} from 'react';
-import {IntlProvider} from 'react-intl';
-import {IntlGlobalProvider} from '../helper/Utils';
+import React, { ReactNode } from 'react';
+import { IntlProvider } from 'react-intl';
 import AppLocale from 'shared/localization';
-import {useLocaleContext} from '../AppContextProvider/LocaleContextProvide';
+import { IntlGlobalProvider } from '../../@crema/utility/helper/Utils';
+import { useLocaleContext } from '../AppContextProvider/LocaleContextProvide';
 
 interface AppLocaleProviderProps {
   children: ReactNode;
 }
 
 const AppLocaleProvider: React.FC<AppLocaleProviderProps> = (props) => {
-  const {locale} = useLocaleContext();
+  const { locale } = useLocaleContext();
   const currentAppLocale = AppLocale[locale.locale];
 
   return (

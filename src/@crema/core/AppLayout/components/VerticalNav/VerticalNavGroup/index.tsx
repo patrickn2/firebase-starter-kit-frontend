@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React, { useMemo } from 'react';
+import { useAuthUser } from '../../../../../../hooks/useAuthUser';
 import { RouterConfigData } from '../../../../../../modules/routesConfig';
-import { useSidebarContext } from '../../../../../utility/AppContextProvider/SidebarContextProvider';
-import { useAuthUser } from '../../../../../utility/AuthHooks';
+import { useSidebarContext } from '../../../../../../providers/AppContextProvider/SidebarContextProvider';
 import { checkPermission } from '../../../../../utility/helper/RouteHelper';
 import IntlMessages from '../../../../../utility/IntlMessages';
 import VerticalCollapse from '../VerticalCollapse';
@@ -33,12 +33,12 @@ const VerticalNavGroup: React.FC<VerticalNavGroupProps> = ({ item, level }) => {
         component='div'
         className={clsx('nav-item nav-item-header')}
       >
-        {<IntlMessages id={item!.messageId} />}
+        {<IntlMessages id={item?.messageId} />}
       </VerticalNavGroupItem>
 
-      {item!.children && (
+      {item?.children && (
         <>
-          {item!.children.map((item) => (
+          {item.children.map((item) => (
             <React.Fragment key={item.id}>
               {item.type === 'group' && (
                 <NavVerticalGroup item={item} level={level} />

@@ -1,4 +1,4 @@
-import {PaletteColorOptions} from '@mui/material';
+import { PaletteColorOptions } from '@mui/material';
 
 export interface RecentActivityData {
   id: number;

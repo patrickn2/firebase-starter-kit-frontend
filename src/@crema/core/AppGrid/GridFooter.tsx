@@ -1,12 +1,12 @@
+import { Box, CircularProgress, Typography } from '@mui/material';
 import React from 'react';
-import {Box, CircularProgress, Typography} from '@mui/material';
 
 interface GridFooterProps {
   loading: boolean;
   footerText: string;
 }
 
-const GridFooter: React.FC<GridFooterProps> = ({loading, footerText}) => {
+const GridFooter: React.FC<GridFooterProps> = ({ loading, footerText }) => {
   if (loading) {
     return (
       <Box

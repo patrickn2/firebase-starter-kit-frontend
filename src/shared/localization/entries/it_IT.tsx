@@ -1,4 +1,4 @@
-import {itIT} from '@mui/material/locale';
+import { itIT } from '@mui/material/locale';
 import saMessages from '../locales/it_IT.json';
 
 const saLang = {

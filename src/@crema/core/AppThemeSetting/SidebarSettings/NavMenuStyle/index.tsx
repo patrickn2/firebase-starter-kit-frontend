@@ -1,24 +1,25 @@
-import React from 'react';
 import Box from '@mui/material/Box';
-import IntlMessages from '../../../../utility/IntlMessages';
-import {menuStyles} from '../../../../services/db/navigationStyle';
+import Image from 'next/image';
+import React from 'react';
 import {
   useSidebarActionsContext,
   useSidebarContext,
-} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+} from '../../../../../providers/AppContextProvider/SidebarContextProvider';
+import { menuStyles } from '../../../../services/db/navigationStyle';
+import IntlMessages from '../../../../utility/IntlMessages';
 import AppSelectedIcon from '../../../AppSelectedIcon';
 
 const NavMenuStyle = () => {
-  const {menuStyle} = useSidebarContext();
+  const { menuStyle } = useSidebarContext();
 
-  const {updateMenuStyle} = useSidebarActionsContext();
+  const { updateMenuStyle } = useSidebarActionsContext();
   const onMenuStyleChange = (menuStyle: string) => {
     updateMenuStyle(menuStyle);
   };
 
   return (
     <>
-      <Box component='h4' sx={{mb: 3}}>
+      <Box component='h4' sx={{ mb: 3 }}>
         <IntlMessages id='customizer.sidebarMenuStyle' />
       </Box>
       <Box
@@ -47,7 +48,7 @@ const NavMenuStyle = () => {
                 }}
                 onClick={() => onMenuStyleChange(menu.alias)}
               >
-                <img src={menu.image} alt='nav' />
+                <Image src={menu.image} alt='nav' />
                 {menuStyle === menu.alias ? <AppSelectedIcon /> : null}
               </Box>
             </Box>

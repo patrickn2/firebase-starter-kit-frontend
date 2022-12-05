@@ -80,7 +80,7 @@ export const rolesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      //Fetch Roles
+      // Fetch Roles
       .addCase(fetchRoles.pending, (state) => {
         state.loading = true;
       })
@@ -92,14 +92,14 @@ export const rolesSlice = createSlice({
         console.log('ERROR', payload);
         state.loading = false;
       })
-      //Create/Update Role
+      // Create/Update Role
       .addCase(createUpdateRole.fulfilled, (state, { payload }) => {
         state.data = [
           payload,
           ...state.data.filter((sd) => sd.roleName !== payload.roleName),
         ];
       })
-      //Delete Role
+      // Delete Role
       .addCase(deleteRole.fulfilled, (state, { payload }) => {
         state.data = state.data.filter((sd) => sd.roleName !== payload);
       })

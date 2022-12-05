@@ -1,6 +1,6 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
+import { useSidebarContext } from '../../../../../providers/AppContextProvider/SidebarContextProvider';
 
 interface SidebarHeaderWrapperProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface SidebarHeaderWrapperProps {
 const SidebarHeaderWrapper: React.FC<SidebarHeaderWrapperProps> = ({
   children,
 }) => {
-  const {sidebarHeaderColor, isSidebarBgImage} = useSidebarContext();
+  const { sidebarHeaderColor, isSidebarBgImage } = useSidebarContext();
   return (
     <Box
       sx={{

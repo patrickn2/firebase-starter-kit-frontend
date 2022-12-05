@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface HorDarkWrapperProps {
   children: ReactNode;
@@ -7,7 +7,10 @@ interface HorDarkWrapperProps {
   [x: string]: any;
 }
 
-const HorDarkWrapper: React.FC<HorDarkWrapperProps> = ({children, ...rest}) => {
+const HorDarkWrapper: React.FC<HorDarkWrapperProps> = ({
+  children,
+  ...rest
+}) => {
   return (
     <Box
       sx={{
@@ -18,7 +21,7 @@ const HorDarkWrapper: React.FC<HorDarkWrapperProps> = ({children, ...rest}) => {
         backgroundColor: (theme) => theme.palette.background.default,
 
         '&.appMainFixedFooter': {
-          pb: {xs: 12, xl: 14.5},
+          pb: { xs: 12, xl: 14.5 },
         },
         '& .customizerOption': {
           top: 210,

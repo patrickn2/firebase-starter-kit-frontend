@@ -1,14 +1,14 @@
-import React, {ReactNode} from 'react';
-import {Dialog, DialogTitle, Slide, Theme} from '@mui/material';
-import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
+import { Dialog, DialogTitle, Slide, Theme } from '@mui/material';
 import Button from '@mui/material/Button';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import IconButton from '@mui/material/IconButton';
+import { TransitionProps } from '@mui/material/transitions';
+import { Breakpoint, SxProps } from '@mui/system';
+import React, { ReactNode } from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AppScrollbar from '../AppScrollbar';
-import {Fonts} from '../../../shared/constants/AppEnums';
-import {TransitionProps} from '@mui/material/transitions';
-import {Breakpoint, SxProps} from '@mui/system';
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {

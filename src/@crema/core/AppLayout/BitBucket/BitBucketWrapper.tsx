@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface BitBucketWrapperProps {
   children: ReactNode;
@@ -19,12 +19,12 @@ const BitBucketWrapper: React.FC<BitBucketWrapperProps> = ({
         flexDirection: 'row',
         position: 'relative',
         backgroundColor: (theme) => theme.palette.background.default,
-        paddingTop: {xs: 14, sm: 17.5, lg: 0},
+        paddingTop: { xs: 14, sm: 17.5, lg: 0 },
         '& .mainContent': {
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
-          width: {xs: '100%', lg: 'calc(100% - 320px)'},
+          width: { xs: '100%', lg: 'calc(100% - 320px)' },
           transition: 'all 0.5s ease',
         },
         '&.bitBucketCollapsed': {

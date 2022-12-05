@@ -6,8 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import { SxProps } from '@mui/system';
 import { useCommon } from 'hooks/useCommon';
 import React, { CSSProperties, ReactNode } from 'react';
+import { useLayoutContext } from '../../../providers/AppContextProvider/LayoutContextProvider';
 import { Fonts, NavStyle } from '../../../shared/constants/AppEnums';
-import { useLayoutContext } from '../../utility/AppContextProvider/LayoutContextProvider';
 import AppContainerWrapper from './AppContainerWrapper';
 import AppSidebar from './AppSidebar';
 

@@ -1,14 +1,14 @@
-import {useDispatch, useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   routeChange,
   setInitialPath,
   toggleNavCollapsed,
 } from 'redux/slices/settings';
-import type {RootState} from 'redux/store';
+import { RootState, useAppDispatch } from 'redux/store';
 
 export function useSettings() {
   const settings = useSelector((state: RootState) => state.settings);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return {
     settings,

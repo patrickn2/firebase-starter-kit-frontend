@@ -1,7 +1,7 @@
-import React, {ReactNode} from 'react';
-import {alpha, Box} from '@mui/material';
-import {useSidebarContext} from '../../../../../utility/AppContextProvider/SidebarContextProvider';
-import {ThemeMode} from '../../../../../../shared/constants/AppEnums';
+import { alpha, Box } from '@mui/material';
+import React, { ReactNode } from 'react';
+import { useSidebarContext } from '../../../../../../providers/AppContextProvider/SidebarContextProvider';
+import { ThemeMode } from '../../../../../../shared/constants/AppEnums';
 
 interface BucketMinibarWrapperProps {
   children: ReactNode;
@@ -13,7 +13,7 @@ const BucketMinibarWrapper: React.FC<BucketMinibarWrapperProps> = ({
   children,
   ...rest
 }) => {
-  const {sidebarBgColor, mode, sidebarTextColor} = useSidebarContext();
+  const { sidebarBgColor, mode, sidebarTextColor } = useSidebarContext();
 
   return (
     <Box

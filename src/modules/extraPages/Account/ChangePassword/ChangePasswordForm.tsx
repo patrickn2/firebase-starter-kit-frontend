@@ -1,13 +1,13 @@
-import React from 'react';
-import {Box, Button} from '@mui/material';
-import AppGridContainer from '../../../../@crema/core/AppGridContainer';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Box, Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import IntlMessages from '../../../../@crema/utility/IntlMessages';
-import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
-import {Visibility, VisibilityOff} from '@mui/icons-material';
-import {Form} from 'formik';
+import InputAdornment from '@mui/material/InputAdornment';
+import { Form } from 'formik';
+import React from 'react';
 import AppTextField from '../../../../@crema/core/AppFormComponents/AppTextField';
+import AppGridContainer from '../../../../@crema/core/AppGridContainer';
+import IntlMessages from '../../../../@crema/utility/IntlMessages';
 
 const ChangePasswordForm = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -64,7 +64,7 @@ const ChangePasswordForm = () => {
             label={<IntlMessages id='common.oldPassword' />}
           />
         </Grid>
-        <Grid item xs={12} md={6} sx={{p: '0 !important'}} />
+        <Grid item xs={12} md={6} sx={{ p: '0 !important' }} />
         <Grid item xs={12} md={6}>
           <AppTextField
             type={showNewPassword ? 'text' : 'password'}

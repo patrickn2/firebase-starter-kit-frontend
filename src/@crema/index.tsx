@@ -1,4 +1,8 @@
 export { default as AppInfoView } from '../components/alertsNDialogs';
+export { default as AppContextProvider } from '../providers/AppContextProvider';
+export { default as AppLocaleProvider } from '../providers/AppLocaleProvider';
+export { default as AppStyleProvider } from '../providers/AppStyleProvider';
+export { default as AppThemeProvider } from '../providers/AppThemeProvider';
 export { default as AppAnimate } from './core/AppAnimate';
 export { default as AppAnimateGroup } from './core/AppAnimateGroup';
 export { default as AppBadge } from './core/AppBadge';
@@ -29,8 +33,4 @@ export { default as AppSemiCircleProgress } from './core/AppSemiCircleProgress';
 export { default as AppsPagination } from './core/AppsPagination';
 export { default as AppSuspense } from './core/AppSuspense';
 export { default as AppTableContainer } from './core/AppTableContainer';
-export { default as AppContextProvider } from './utility/AppContextProvider';
-export { default as AppLocaleProvider } from './utility/AppLocaleProvider';
-export { default as AppStyleProvider } from './utility/AppStyleProvider';
-export { default as AppThemeProvider } from './utility/AppThemeProvider';
 export { default as AuthRoutes } from './utility/AuthRoutes';

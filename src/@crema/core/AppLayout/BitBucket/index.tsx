@@ -1,23 +1,23 @@
-import React, {ReactNode, useState} from 'react';
-import AppSidebar from './AppSidebar';
-import {AppContentView} from '../../../index';
+import Box from '@mui/material/Box';
+import Hidden from '@mui/material/Hidden';
+import clsx from 'clsx';
+import React, { ReactNode, useState } from 'react';
+import { useLayoutContext } from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
+import { AppContentView } from '../../../index';
 import AppThemeSetting from '../../AppThemeSetting';
 import AppHeader from './AppHeader';
-import clsx from 'clsx';
-import Hidden from '@mui/material/Hidden';
-import Box from '@mui/material/Box';
-import BitBucketWrapper from './BitBucketWrapper';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
+import AppSidebar from './AppSidebar';
 import BitBucketContainer from './BitBucketContainer';
+import BitBucketWrapper from './BitBucketWrapper';
 
 interface BitBucketProps {
   children: ReactNode;
 }
 
-const BitBucket: React.FC<BitBucketProps> = ({children}) => {
+const BitBucket: React.FC<BitBucketProps> = ({ children }) => {
   const [isCollapsed, setCollapsed] = useState(false);
-  const {layoutType} = useLayoutContext();
+  const { layoutType } = useLayoutContext();
 
   return (
     <BitBucketContainer

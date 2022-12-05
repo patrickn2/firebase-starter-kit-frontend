@@ -6,7 +6,7 @@ interface AppAnimateProps {
   [x: string]: any;
 }
 
-const AppAnimate: React.FC<AppAnimateProps> = ({children}) => {
+const AppAnimate: React.FC<AppAnimateProps> = ({ children }) => {
   return <>{children}</>;
 };
 

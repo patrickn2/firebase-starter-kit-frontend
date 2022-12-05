@@ -3,14 +3,14 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Link from 'next/link';
+import { SignUpProps } from 'providers/FirebaseAuthProvider';
 import { Controller, useForm } from 'react-hook-form';
 import { AiOutlineGoogle, AiOutlineTwitter } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
 import { useIntl } from 'react-intl';
-import { SignUpProps } from 'services/firebase/FirebaseAuthProvider';
-import { useAuthMethod } from '../../../@crema/utility/AuthHooks';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
+import { useAuthMethod } from '../../../hooks/useAuthUser';
 import { Fonts } from '../../../shared/constants/AppEnums';
 
 const SignupFirebase = () => {

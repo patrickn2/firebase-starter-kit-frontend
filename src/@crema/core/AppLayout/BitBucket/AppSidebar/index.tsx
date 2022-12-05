@@ -1,13 +1,13 @@
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import {Typography} from '@mui/material';
+import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Hidden from '@mui/material/Hidden';
 import clsx from 'clsx';
-import {useSettings} from 'hooks/useSettings';
+import { useSettings } from 'hooks/useSettings';
 import React from 'react';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
 import AppScrollbar from '../../../AppScrollbar';
 import MainSidebar from '../../components/MainSidebar';
 import VerticalNav from '../../components/VerticalNav';
@@ -23,8 +23,8 @@ interface AppSidebarProps {
 }
 
 const AppSidebar: React.FC<AppSidebarProps> = (props) => {
-  const {settings, toggleNavCollapsed} = useSettings();
-  const {isCollapsed, setCollapsed, variant = '', position = 'left'} = props;
+  const { settings, toggleNavCollapsed } = useSettings();
+  const { isCollapsed, setCollapsed, variant = '', position = 'left' } = props;
 
   const sideBarComponent = () => {
     return (
@@ -81,7 +81,7 @@ const AppSidebar: React.FC<AppSidebarProps> = (props) => {
             root: clsx(variant),
             paper: clsx(variant),
           }}
-          style={{position: 'absolute'}}
+          style={{ position: 'absolute' }}
         >
           {sideBarComponent()}
         </Drawer>

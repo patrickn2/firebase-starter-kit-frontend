@@ -1,22 +1,22 @@
-import React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
+import accountData from '@crema/services/db/extraPages/account';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {BiUser} from 'react-icons/bi';
-import {AiOutlineLock} from 'react-icons/ai';
-import {IoMdInformationCircleOutline} from 'react-icons/io';
-import {IoShareSocialOutline} from 'react-icons/io5';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import React from 'react';
+import { AiOutlineLock } from 'react-icons/ai';
+import { BiUser } from 'react-icons/bi';
+import { IoMdInformationCircleOutline } from 'react-icons/io';
+import { IoShareSocialOutline } from 'react-icons/io5';
+import { AppAnimate } from '../../../@crema';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AccountTabsWrapper from './AccountTabsWrapper';
-import PersonalInfo from './PersonalInfo';
 import ChangePassword from './ChangePassword';
 import Information from './Information';
-import Social from './Social';
 import Notification from './Notification';
-import accountData from '@crema/services/db/extraPages/account';
-import {AppAnimate} from '../../../@crema';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import PersonalInfo from './PersonalInfo';
+import Social from './Social';
 
 function a11yProps(index: number) {
   return {
@@ -26,7 +26,7 @@ function a11yProps(index: number) {
 }
 
 const tabs = [
-  {id: 1, icon: <BiUser />, name: <IntlMessages id='common.personalInfo' />},
+  { id: 1, icon: <BiUser />, name: <IntlMessages id='common.personalInfo' /> },
   {
     id: 2,
     icon: <AiOutlineLock />,

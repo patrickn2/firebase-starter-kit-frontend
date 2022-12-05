@@ -8,9 +8,9 @@ import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import {alpha} from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
-import {useSettings} from 'hooks/useSettings';
+import { useSettings } from 'hooks/useSettings';
 import React from 'react';
 import AppMessages from '../../../AppMessages';
 import AppNotifications from '../../../AppNotifications';
@@ -18,7 +18,7 @@ import AppTooltip from '../../../AppTooltip';
 import AppLogo from '../../components/AppLogo';
 
 const AppHeader = () => {
-  const {toggleNavCollapsed} = useSettings();
+  const { toggleNavCollapsed } = useSettings();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleClick = (event: any) => {
@@ -46,9 +46,9 @@ const AppHeader = () => {
       <Toolbar
         sx={{
           boxSizing: 'border-box',
-          minHeight: {xs: 56, sm: 70},
-          paddingLeft: {xs: 5},
-          paddingRight: {xs: 5, md: 7.5, xl: 12.5},
+          minHeight: { xs: 56, sm: 70 },
+          paddingLeft: { xs: 5 },
+          paddingRight: { xs: 5, md: 7.5, xl: 12.5 },
         }}
       >
         <Hidden lgUp>
@@ -80,7 +80,7 @@ const AppHeader = () => {
         />
         <AppLngSwitcher iconOnly={true} tooltipPosition='bottom' />
 
-        <Box sx={{ml: 4}}>
+        <Box sx={{ ml: 4 }}>
           <Hidden smDown>
             <Box
               sx={{

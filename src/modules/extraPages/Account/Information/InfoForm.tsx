@@ -1,22 +1,28 @@
-import React from 'react';
-import AppGridContainer from '../../../../@crema/core/AppGridContainer';
+import DatePicker from '@mui/lab/DatePicker';
+import { Button } from '@mui/material';
+import Autocomplete from '@mui/material/Autocomplete';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import IntlMessages from '../../../../@crema/utility/IntlMessages';
-import Box from '@mui/material/Box';
-import {Button} from '@mui/material';
-import {Form} from 'formik';
+import { Form } from 'formik';
+import Image from 'next/image';
+import React from 'react';
 import AppTextField from '../../../../@crema/core/AppFormComponents/AppTextField';
-import DatePicker from '@mui/lab/DatePicker';
-import Autocomplete from '@mui/material/Autocomplete';
+import AppGridContainer from '../../../../@crema/core/AppGridContainer';
 import countries from '../../../../@crema/services/db/countries';
+import IntlMessages from '../../../../@crema/utility/IntlMessages';
 
 interface InfoFormProps {
   setFieldValue: (field: string, data: any) => void;
-  values: any;
+  values: {
+    bio: string;
+    dob: null | string;
+    country: string;
+    website: string;
+  };
 }
 
-const InfoForm: React.FC<InfoFormProps> = ({values, setFieldValue}) => {
+const InfoForm = ({ values, setFieldValue }: InfoFormProps) => {
   return (
     <Form autoComplete='off'>
       <AppGridContainer spacing={4}>
@@ -61,14 +67,13 @@ const InfoForm: React.FC<InfoFormProps> = ({values, setFieldValue}) => {
             renderOption={(props, option) => (
               <Box
                 component='li'
-                sx={{'& > img': {mr: 2, flexShrink: 0}}}
+                sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
                 {...props}
               >
-                <img
+                <Image
                   loading='lazy'
                   width='20'
                   src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                  srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
                   alt=''
                 />
                 {option.label} ({option.code}) +{option.phone}

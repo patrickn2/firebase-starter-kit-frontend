@@ -1,22 +1,22 @@
-import React, {ReactNode} from 'react';
-import AppSidebar from './AppSidebar';
-import {AppContentView} from '../../../index';
-import AppThemeSetting from '../../AppThemeSetting';
-import AppHeader from './AppHeader';
-import clsx from 'clsx';
 import Box from '@mui/material/Box';
-import StandardWrapper from './StandardWrapper';
+import clsx from 'clsx';
+import React, { ReactNode } from 'react';
+import { useLayoutContext } from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
+import { AppContentView } from '../../../index';
+import AppThemeSetting from '../../AppThemeSetting';
 import AppFixedFooter from './AppFixedFooter';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import AppHeader from './AppHeader';
+import AppSidebar from './AppSidebar';
 import StandardContainer from './StandardContainer';
+import StandardWrapper from './StandardWrapper';
 
 interface StandardProps {
   children: ReactNode;
 }
 
-const Standard: React.FC<StandardProps> = ({children}) => {
-  const {footer, layoutType, footerType} = useLayoutContext();
+const Standard: React.FC<StandardProps> = ({ children }) => {
+  const { footer, layoutType, footerType } = useLayoutContext();
 
   return (
     <StandardContainer

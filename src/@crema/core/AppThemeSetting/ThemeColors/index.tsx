@@ -1,17 +1,18 @@
-import React from 'react';
+import { PaletteMode, SimplePaletteColorOptions } from '@mui/material';
 import Box from '@mui/material/Box';
-import {CustomizerItemWrapper} from '../index.style';
-import IntlMessages from '../../../utility/IntlMessages';
-import themeColorSets from '../../../../shared/constants/ColorSets';
-import CustomColorCell from '../CustomColorCell';
+import React from 'react';
 import {
   useThemeActionsContext,
   useThemeContext,
-} from '../../../utility/AppContextProvider/ThemeContextProvider';
+} from '../../../../providers/AppContextProvider/ThemeContextProvider';
+import themeColorSets from '../../../../shared/constants/ColorSets';
+import IntlMessages from '../../../utility/IntlMessages';
 import AppGrid from '../../AppGrid';
+import CustomColorCell from '../CustomColorCell';
+import { CustomizerItemWrapper } from '../index.style';
 
 export interface ThemeColorsProps {
-  mode: string;
+  mode: PaletteMode;
   primary: {
     main: string;
   };
@@ -31,21 +32,25 @@ export interface ThemeColorsProps {
 }
 
 const ThemeColors = () => {
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
 
-  const {updateTheme} = useThemeActionsContext();
+  const { updateTheme } = useThemeActionsContext();
 
   const updateThemeColors = (colorSet: ThemeColorsProps) => {
-    theme.palette.primary.main = colorSet.primary.main;
-    theme.palette.secondary.main = colorSet.secondary.main;
-    theme.palette.background = colorSet.background;
-    theme.palette.mode = colorSet.mode;
-    theme.palette.text = colorSet.text;
-    updateTheme({...theme});
+    (theme.palette?.primary as SimplePaletteColorOptions).main =
+      colorSet.primary.main;
+    (theme.palette?.secondary as SimplePaletteColorOptions).main =
+      colorSet.secondary.main;
+    if (theme.palette) {
+      theme.palette.background = colorSet.background;
+      theme.palette.mode = colorSet.mode;
+      theme.palette.text = colorSet.text;
+    }
+    updateTheme({ ...theme });
   };
   return (
     <CustomizerItemWrapper>
-      <Box component='h4' sx={{mb: 2}}>
+      <Box component='h4' sx={{ mb: 2 }}>
         <IntlMessages id='customizer.themeColors' />
       </Box>
       <Box mt={4}>

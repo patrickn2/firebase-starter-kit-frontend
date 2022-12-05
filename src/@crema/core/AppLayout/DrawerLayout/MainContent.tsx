@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface MainContentProps {
   children: ReactNode;
@@ -7,7 +7,7 @@ interface MainContentProps {
   [x: string]: any;
 }
 
-const MainContent: React.FC<MainContentProps> = ({children, ...rest}) => {
+const MainContent: React.FC<MainContentProps> = ({ children, ...rest }) => {
   return (
     <Box
       sx={{

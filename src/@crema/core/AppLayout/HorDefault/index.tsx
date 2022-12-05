@@ -1,22 +1,22 @@
-import React, {ReactNode} from 'react';
-import clsx from 'clsx';
 import AppContentView from '@crema/core/AppContentView';
+import clsx from 'clsx';
+import React, { ReactNode } from 'react';
+import { useLayoutContext } from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
+import AppThemeSetting from '../../AppThemeSetting';
 import AppFixedFooter from './AppFixedFooter';
 import AppHeader from './AppHeader';
 import AppSidebar from './AppSidebar';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import AppThemeSetting from '../../AppThemeSetting';
+import HorDefaultContainer from './HorDefaultContainer';
 import HorDefaultWrapper from './HorDefaultWrapper';
 import MainContent from './MainContent';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
-import HorDefaultContainer from './HorDefaultContainer';
 
 interface HorDefaultProps {
   children: ReactNode;
 }
 
-const HorDefault: React.FC<HorDefaultProps> = ({children}) => {
-  const {footer, layoutType, footerType} = useLayoutContext();
+const HorDefault: React.FC<HorDefaultProps> = ({ children }) => {
+  const { footer, layoutType, footerType } = useLayoutContext();
 
   return (
     <HorDefaultContainer

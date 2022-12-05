@@ -1,22 +1,22 @@
-import React, {ReactNode} from 'react';
-import clsx from 'clsx';
 import AppContentView from '@crema/core/AppContentView';
+import clsx from 'clsx';
+import React, { ReactNode } from 'react';
+import { useLayoutContext } from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
+import AppThemeSetting from '../../AppThemeSetting';
 import AppFixedFooter from './AppFixedFooter';
 import AppHeader from './AppHeader';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import AppThemeSetting from '../../AppThemeSetting';
-import DrawerLayoutWrapper from './DrawerLayoutWrapper';
-import MainContent from './MainContent';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
 import AppSidebar from './AppSidebar';
 import DrawerLayoutContainer from './DrawerLayoutContainer';
+import DrawerLayoutWrapper from './DrawerLayoutWrapper';
+import MainContent from './MainContent';
 
 interface DrawerLayoutProps {
   children: ReactNode;
 }
 
-const DrawerLayout: React.FC<DrawerLayoutProps> = ({children}) => {
-  const {footer, layoutType, headerType, footerType} = useLayoutContext();
+const DrawerLayout: React.FC<DrawerLayoutProps> = ({ children }) => {
+  const { footer, layoutType, headerType, footerType } = useLayoutContext();
 
   return (
     <DrawerLayoutContainer

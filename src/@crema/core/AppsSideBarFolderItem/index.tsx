@@ -1,28 +1,28 @@
-import React from 'react';
+import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
+import AutorenewOutlinedIcon from '@mui/icons-material/AutorenewOutlined';
+import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import DraftsOutlinedIcon from '@mui/icons-material/DraftsOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import LabelImportantIcon from '@mui/icons-material/LabelImportant';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import ScheduleOutlinedIcon from '@mui/icons-material/ScheduleOutlined';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
+import TodayOutlinedIcon from '@mui/icons-material/TodayOutlined';
+import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListItem from '@mui/material/ListItem';
-import Link from 'next/link';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-import DraftsOutlinedIcon from '@mui/icons-material/DraftsOutlined';
-import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
-import AutorenewOutlinedIcon from '@mui/icons-material/AutorenewOutlined';
-import ScheduleOutlinedIcon from '@mui/icons-material/ScheduleOutlined';
-import TodayOutlinedIcon from '@mui/icons-material/TodayOutlined';
-import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
-import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import LabelImportantIcon from '@mui/icons-material/LabelImportant';
-import {alpha, styled} from '@mui/material/styles';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { alpha, styled } from '@mui/material/styles';
 import clsx from 'clsx';
-import {useRouter} from 'next/router';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
-const AppsSideBarFolderList = styled(ListItem)(({theme}) => {
+const AppsSideBarFolderList = styled(ListItem)(({ theme }) => {
   return {
     padding: '7px 16px',
     borderRadius: '0 30px 30px 0',
@@ -68,7 +68,7 @@ const AppsSideBarFolderList = styled(ListItem)(({theme}) => {
   };
 });
 
-const getIconByName = (name: string, active: boolean) => {
+const getIconByName = (name: string) => {
   switch (name) {
     case 'inbox':
       return <EmailOutlinedIcon />;
@@ -112,7 +112,7 @@ const AppsSideBarFolderItem: React.FC<AppsSideBarFolderItemProps> = ({
   item,
   path,
 }) => {
-  const {asPath} = useRouter();
+  const { asPath } = useRouter();
 
   return (
     <Link href={path}>
@@ -132,7 +132,7 @@ const AppsSideBarFolderItem: React.FC<AppsSideBarFolderItemProps> = ({
             },
           }}
         >
-          {getIconByName(item.alias, path === asPath)}
+          {getIconByName(item.alias)}
         </ListItemIcon>
         <ListItemText
           primary={item.name}

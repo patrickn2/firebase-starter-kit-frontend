@@ -1,7 +1,7 @@
-import React from 'react';
 import LinearProgress, {
   linearProgressClasses,
 } from '@mui/material/LinearProgress';
+import React from 'react';
 
 interface CustomLinearProgressProps {
   pathColor: string;

@@ -1,8 +1,8 @@
-import React from 'react';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
+import { Box, ListItem, Typography } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
-import {Box, ListItem, Typography} from '@mui/material';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import React from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 interface NotificationItemProps {
   item: {
@@ -12,7 +12,7 @@ interface NotificationItemProps {
   };
 }
 
-const NotificationItem: React.FC<NotificationItemProps> = ({item}) => {
+const NotificationItem: React.FC<NotificationItemProps> = ({ item }) => {
   return (
     <ListItem
       sx={{

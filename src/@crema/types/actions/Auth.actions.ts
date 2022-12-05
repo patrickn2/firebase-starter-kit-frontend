@@ -1,4 +1,4 @@
-import {AuthUser} from '../models/AuthUser';
+import { AuthUser } from '../models/AuthUser';
 
 export const UPDATE_AUTH_USER = 'UPDATE_AUTH_USER';
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';

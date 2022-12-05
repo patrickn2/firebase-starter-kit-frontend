@@ -1,4 +1,4 @@
-import {enUS} from '@mui/material/locale';
+import { enUS } from '@mui/material/locale';
 import enMessages from '../locales/en_US.json';
 
 const EnLang = {

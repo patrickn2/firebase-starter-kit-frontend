@@ -1,12 +1,12 @@
-import React, {ReactNode} from 'react';
-import {alpha, Box} from '@mui/material';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { alpha, Box } from '@mui/material';
+import React, { ReactNode } from 'react';
+import { useSidebarContext } from '../../../../../providers/AppContextProvider/SidebarContextProvider';
 
 interface HeaderNavWrapperProps {
   children: ReactNode;
 }
 
-const HeaderNavWrapper: React.FC<HeaderNavWrapperProps> = ({children}) => {
+const HeaderNavWrapper: React.FC<HeaderNavWrapperProps> = ({ children }) => {
   const {
     sidebarBgColor,
     sidebarTextColor,
@@ -27,7 +27,7 @@ const HeaderNavWrapper: React.FC<HeaderNavWrapperProps> = ({children}) => {
           width: 'auto',
           cursor: 'pointer',
           py: 1,
-          px: {xs: 4, lg: 5},
+          px: { xs: 4, lg: 5 },
           borderRadius: 1,
           '&.active': {
             color: sidebarMenuSelectedTextColor,

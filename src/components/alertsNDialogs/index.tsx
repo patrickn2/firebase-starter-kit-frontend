@@ -1,7 +1,6 @@
 import AppLoader from '@crema/core/AppLoader';
 import { useCommon } from 'hooks/useCommon';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
 import AlertDialog from './AlertDialog';
 import GeneralAlert from './GeneralAlert';
 const AlertsDialogs = () => {

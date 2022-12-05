@@ -1,17 +1,18 @@
-import React from 'react';
 import Box from '@mui/material/Box';
-import {CustomizerItemWrapper} from '../index.style';
-import IntlMessages from '../../../utility/IntlMessages';
-import {navStyles} from '../../../services/db/navigationStyle';
+import Image from 'next/image';
+import React from 'react';
 import {
   useLayoutActionsContext,
   useLayoutContext,
-} from '../../../utility/AppContextProvider/LayoutContextProvider';
+} from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { navStyles } from '../../../services/db/navigationStyle';
+import IntlMessages from '../../../utility/IntlMessages';
 import AppSelectedIcon from '../../AppSelectedIcon';
+import { CustomizerItemWrapper } from '../index.style';
 
 const NavStyles = () => {
-  const {updateNavStyle} = useLayoutActionsContext();
-  const {navStyle} = useLayoutContext();
+  const { updateNavStyle } = useLayoutActionsContext();
+  const { navStyle } = useLayoutContext();
 
   const onNavStyleChange = (navStyle: string) => {
     updateNavStyle(navStyle);
@@ -23,7 +24,7 @@ const NavStyles = () => {
         pb: 1,
       }}
     >
-      <Box component='h4' sx={{mb: 3}}>
+      <Box component='h4' sx={{ mb: 3 }}>
         <IntlMessages id='customizer.navigationStyles' />
       </Box>
       <Box
@@ -50,7 +51,7 @@ const NavStyles = () => {
                 }}
                 onClick={() => onNavStyleChange(navLayout.alias)}
               >
-                <img src={navLayout.image} alt='nav' />
+                <Image src={navLayout.image} alt='nav' />
                 {navStyle === navLayout.alias ? <AppSelectedIcon /> : null}
               </Box>
             </Box>

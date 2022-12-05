@@ -1,11 +1,11 @@
-import React, {ReactNode} from 'react';
 import Box from '@mui/material/Box';
+import React, { ReactNode } from 'react';
 
 interface MediaSliderProps {
   children?: ReactNode;
 }
 
-const MediaSlider: React.FC<MediaSliderProps> = ({children}) => {
+const MediaSlider: React.FC<MediaSliderProps> = ({ children }) => {
   return (
     <Box
       sx={{

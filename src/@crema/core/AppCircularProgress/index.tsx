@@ -1,9 +1,9 @@
-import React, {ReactNode} from 'react';
+import Box from '@mui/material/Box';
 import CircularProgress, {
   circularProgressClasses,
 } from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import React, { ReactNode } from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 interface AppCircularProgressProps {
   hidePercentage?: boolean;
@@ -40,7 +40,7 @@ const AppCircularProgress: React.FC<AppCircularProgressProps> = ({
         margin: '0 auto',
       }}
     >
-      <Box sx={{position: 'relative'}}>
+      <Box sx={{ position: 'relative' }}>
         <CircularProgress
           variant='determinate'
           value={100}

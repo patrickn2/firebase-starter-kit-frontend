@@ -1,11 +1,11 @@
-import React, {ReactNode, useState} from 'react';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import { Theme } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import { SxProps } from '@mui/system';
+import React, { ReactNode, useState } from 'react';
 import IntlMessages from '../../utility/IntlMessages';
 import AppConfirmDialog from '../AppConfirmDialog';
-import IconButton from '@mui/material/IconButton';
 import AppTooltip from '../AppTooltip';
-import {SxProps} from '@mui/system';
-import {Theme} from '@mui/material';
 
 interface AppsDeleteIconProps {
   deleteAction: () => void;

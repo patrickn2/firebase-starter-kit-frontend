@@ -1,6 +1,6 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
+import { useSidebarContext } from '../../../../../providers/AppContextProvider/SidebarContextProvider';
 
 interface AppSidebarContainerProps {
   children: ReactNode;
@@ -12,7 +12,7 @@ const AppSidebarContainer: React.FC<AppSidebarContainerProps> = ({
   children,
   ...rest
 }) => {
-  const {borderColor} = useSidebarContext();
+  const { borderColor } = useSidebarContext();
   return (
     <Box
       sx={{
@@ -20,7 +20,7 @@ const AppSidebarContainer: React.FC<AppSidebarContainerProps> = ({
         py: 0,
         transition: 'all 0.5s ease',
         width: 256,
-        borderLeft: `solid 1px ${borderColor}`,
+        borderLeft: `solid 1px ${borderColor ?? ''}`,
         '& .app-sidebar': {
           position: 'relative',
           width: '100%',

@@ -1,23 +1,23 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import Switch from '@mui/material/Switch';
-import {CustomizerItemWrapper} from '../index.style';
-import IntlMessages from '../../../utility/IntlMessages';
-import {LayoutDirection} from '../../../../shared/constants/AppEnums';
+import React from 'react';
 import {
   useThemeActionsContext,
   useThemeContext,
-} from '../../../utility/AppContextProvider/ThemeContextProvider';
+} from '../../../../providers/AppContextProvider/ThemeContextProvider';
+import { LayoutDirection } from '../../../../shared/constants/AppEnums';
+import IntlMessages from '../../../utility/IntlMessages';
+import { CustomizerItemWrapper } from '../index.style';
 
 const ThemeDirection = () => {
-  const {theme} = useThemeContext();
-  const {updateTheme} = useThemeActionsContext();
+  const { theme } = useThemeContext();
+  const { updateTheme } = useThemeActionsContext();
 
   const onChangeRtlSetting = (event: React.ChangeEvent<HTMLInputElement>) => {
     theme.direction = event.target.checked
       ? LayoutDirection.RTL
       : LayoutDirection.LTR;
-    updateTheme({...theme});
+    updateTheme({ ...theme });
   };
 
   return (
@@ -31,7 +31,7 @@ const ThemeDirection = () => {
             checked={theme.direction === LayoutDirection.RTL}
             onChange={onChangeRtlSetting}
             value='checkedA'
-            inputProps={{'aria-label': 'secondary checkbox'}}
+            inputProps={{ 'aria-label': 'secondary checkbox' }}
           />
         </Box>
       </Box>

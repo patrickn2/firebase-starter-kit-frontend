@@ -1,5 +1,5 @@
-import React, {ReactNode, useEffect, useRef, useState} from 'react';
-import {createPortal} from 'react-dom';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 interface ClientOnlyPortalProps {
   children: ReactNode;
@@ -18,7 +18,7 @@ const ClientOnlyPortal: React.FC<ClientOnlyPortalProps> = ({
     setMounted(true);
   }, [selector]);
 
-  return mounted ? createPortal(children, ref.current!) : null;
+  return mounted && ref.current ? createPortal(children, ref.current) : null;
 };
 
 export default ClientOnlyPortal;

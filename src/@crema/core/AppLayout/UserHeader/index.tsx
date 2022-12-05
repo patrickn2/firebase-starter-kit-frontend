@@ -1,22 +1,22 @@
-import React, {ReactNode} from 'react';
-import AppSidebar from './AppSidebar';
-import {AppContentView} from '../../../index';
-import AppThemeSetting from '../../AppThemeSetting';
-import AppHeader from './AppHeader';
-import clsx from 'clsx';
 import Box from '@mui/material/Box';
-import UserHeaderWrapper from './UserHeaderWrapper';
+import clsx from 'clsx';
+import React, { ReactNode } from 'react';
+import { useLayoutContext } from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
+import { AppContentView } from '../../../index';
+import AppThemeSetting from '../../AppThemeSetting';
 import AppFixedFooter from './AppFixedFooter';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import AppHeader from './AppHeader';
+import AppSidebar from './AppSidebar';
 import UserHeaderContainer from './UserHeaderContainer';
+import UserHeaderWrapper from './UserHeaderWrapper';
 
 interface UserHeaderProps {
   children: ReactNode;
 }
 
-const UserHeader: React.FC<UserHeaderProps> = ({children}) => {
-  const {footer, layoutType, footerType} = useLayoutContext();
+const UserHeader: React.FC<UserHeaderProps> = ({ children }) => {
+  const { footer, layoutType, footerType } = useLayoutContext();
 
   return (
     <UserHeaderContainer

@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export interface Settings {
   navCollapsed: boolean;
@@ -15,18 +15,18 @@ export const settingsSlice = createSlice({
   initialState,
   reducers: {
     toggleNavCollapsed: (state) => {
-      state = {...state, navCollapsed: !state.navCollapsed};
+      return { ...state, navCollapsed: !state.navCollapsed };
     },
-    setInitialPath: (state, actions) => {
-      state = {...state, initialPath: actions.payload};
+    setInitialPath: (state, { payload }) => {
+      return { ...state, initialPath: payload };
     },
     routeChange: (state) => {
-      state = {...state, initialPath: '/'};
+      return { ...state, initialPath: '/' };
     },
   },
 });
 
-export const {toggleNavCollapsed, setInitialPath, routeChange} =
+export const { toggleNavCollapsed, setInitialPath, routeChange } =
   settingsSlice.actions;
 
 export default settingsSlice.reducer;

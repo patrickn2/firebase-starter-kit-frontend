@@ -1,19 +1,19 @@
-import React from 'react';
-import {Button} from '@mui/material';
-import AppGridContainer from '../../../../@crema/core/AppGridContainer';
-import Grid from '@mui/material/Grid';
-import IntlMessages from '../../../../@crema/utility/IntlMessages';
+import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
-import ProfileConnection from './ProfileConnection';
-import {Form} from 'formik';
+import Grid from '@mui/material/Grid';
+import { Form } from 'formik';
+import React from 'react';
 import AppTextField from '../../../../@crema/core/AppFormComponents/AppTextField';
-import {MemberData} from '../../../../@crema/services/db/extraPages/account';
+import AppGridContainer from '../../../../@crema/core/AppGridContainer';
+import { MemberData } from '../../../../@crema/services/db/extraPages/account';
+import IntlMessages from '../../../../@crema/utility/IntlMessages';
+import ProfileConnection from './ProfileConnection';
 
 interface SocialFormProps {
   social: MemberData[];
 }
 
-const SocialForm: React.FC<SocialFormProps> = ({social}) => {
+const SocialForm: React.FC<SocialFormProps> = ({ social }) => {
   return (
     <Form autoComplete='off'>
       <AppGridContainer spacing={4}>

@@ -1,6 +1,6 @@
-import {useField} from 'formik';
-import AppAutoComplete from './AppAutoComplete';
+import { useField } from 'formik';
 import React from 'react';
+import AppAutoComplete from './AppAutoComplete';
 
 const AppAutocompleteField = (props: any) => {
   const [field, meta] = useField(props);

@@ -1,18 +1,18 @@
-import React, {useEffect} from 'react';
-import Layouts from '../../core/AppLayout/Layouts';
+import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
 import {
   useLayoutActionsContext,
   useLayoutContext,
-} from '../../utility/AppContextProvider/LayoutContextProvider';
-import {useSidebarActionsContext} from '../../utility/AppContextProvider/SidebarContextProvider';
-import {useRouter} from 'next/router';
+} from '../../../providers/AppContextProvider/LayoutContextProvider';
+import { useSidebarActionsContext } from '../../../providers/AppContextProvider/SidebarContextProvider';
+import Layouts from '../../core/AppLayout/Layouts';
 
 const withLayout = (ComposedComponent) => (props) => {
-  const {navStyle} = useLayoutContext();
+  const { navStyle } = useLayoutContext();
   const AppLayout = Layouts[navStyle];
 
-  const {updateNavStyle} = useLayoutActionsContext();
-  const {updateMenuStyle, setSidebarBgImage} = useSidebarActionsContext();
+  const { updateNavStyle } = useLayoutActionsContext();
+  const { updateMenuStyle, setSidebarBgImage } = useSidebarActionsContext();
   const router = useRouter();
 
   useEffect(() => {

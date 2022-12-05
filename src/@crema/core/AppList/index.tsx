@@ -1,8 +1,8 @@
-import React, {CSSProperties, ReactNode} from 'react';
-import ListView from './ListView';
+import { Theme } from '@mui/material';
+import { SxProps } from '@mui/system';
+import React, { CSSProperties, ReactNode } from 'react';
 import ListFooter from './ListFooter';
-import {SxProps} from '@mui/system';
-import {Theme} from '@mui/material';
+import ListView from './ListView';
 
 interface AppListProps {
   border?: boolean;
@@ -23,7 +23,7 @@ interface AppListProps {
   [x: string]: any;
 }
 
-const AppList: React.FC<AppListProps> = ({footerProps, ...props}) => {
+const AppList: React.FC<AppListProps> = ({ footerProps, ...props }) => {
   return (
     <ListView
       {...props}

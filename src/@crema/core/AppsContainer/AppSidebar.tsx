@@ -1,9 +1,9 @@
-import {Box, drawerClasses, Slide} from '@mui/material';
+import { Box, drawerClasses, Slide } from '@mui/material';
 import Card from '@mui/material/Card';
 import Drawer from '@mui/material/Drawer';
 import Hidden from '@mui/material/Hidden';
-import {useCommon} from 'hooks/useCommon';
-import React, {ReactNode} from 'react';
+import { useCommon } from 'hooks/useCommon';
+import React, { ReactNode } from 'react';
 
 interface AppSidebarProps {
   isAppDrawerOpen?: boolean;
@@ -13,8 +13,8 @@ interface AppSidebarProps {
 }
 
 const AppSidebar: React.FC<AppSidebarProps> = (props) => {
-  const {onToggleAppDrawer} = useCommon();
-  const {isAppDrawerOpen, sidebarContent} = props;
+  const { onToggleAppDrawer } = useCommon();
+  const { isAppDrawerOpen, sidebarContent } = props;
   return (
     <Slide direction='right' in mountOnEnter unmountOnExit>
       <Box
@@ -43,7 +43,7 @@ const AppSidebar: React.FC<AppSidebarProps> = (props) => {
           </Drawer>
         </Hidden>
         <Hidden lgDown>
-          <Card style={{height: '100%'}}>{sidebarContent}</Card>
+          <Card style={{ height: '100%' }}>{sidebarContent}</Card>
         </Hidden>
       </Box>
     </Slide>

@@ -11,6 +11,11 @@ module.exports = withTM({
     config.resolve.alias = {
       ...config.resolve.alias,
     };
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    });
     return config;
   },
 });

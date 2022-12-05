@@ -1,12 +1,12 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface AppsFooterProps {
   children: ReactNode;
 }
 
 const AppsFooter: React.FC<AppsFooterProps> = (props) => {
-  const {children} = props;
+  const { children } = props;
   return (
     <Box
       sx={{

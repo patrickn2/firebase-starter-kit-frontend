@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {alpha, Box} from '@mui/material';
+import { alpha, Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface FooterWrapperProps {
   children: ReactNode;
@@ -7,7 +7,7 @@ interface FooterWrapperProps {
   [x: string]: any;
 }
 
-const FooterWrapper: React.FC<FooterWrapperProps> = ({children, ...rest}) => {
+const FooterWrapper: React.FC<FooterWrapperProps> = ({ children, ...rest }) => {
   return (
     <Box
       sx={{
@@ -23,7 +23,7 @@ const FooterWrapper: React.FC<FooterWrapperProps> = ({children, ...rest}) => {
           alignItems: 'center',
           flexDirection: 'row',
           display: 'flex',
-          padding: {xs: '5px 20px', md: '5px 32px', xl: '10px 32px'},
+          padding: { xs: '5px 20px', md: '5px 32px', xl: '10px 32px' },
         },
       }}
       {...rest}

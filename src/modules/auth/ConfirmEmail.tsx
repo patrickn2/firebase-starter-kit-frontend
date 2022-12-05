@@ -1,9 +1,9 @@
-import { useAuthMethod } from '@crema/utility/AuthHooks';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useAuthMethod } from 'hooks/useAuthUser';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import AppLogo from '../../@crema/core/AppLayout/components/AppLogo';
 import IntlMessages from '../../@crema/utility/IntlMessages';
 import { Fonts } from '../../shared/constants/AppEnums';

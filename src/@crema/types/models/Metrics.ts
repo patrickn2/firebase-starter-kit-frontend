@@ -1,45 +1,45 @@
-import {PaletteColorOptions} from '@mui/material';
+import { PaletteColorOptions } from '@mui/material';
 
 export interface IncomeLastYear {
   value: string;
-  graphData: {name: ''; revenue: number}[];
+  graphData: { name: ''; revenue: number }[];
 }
 
 export interface WebsiteTrafficData {
   value: string;
-  graphData: {name: string; traffic: number}[];
+  graphData: { name: string; traffic: number }[];
 }
 
 export interface RevenueGrowthData {
   value: string;
-  graphData: {name: string; growth: number}[];
+  graphData: { name: string; growth: number }[];
 }
 
 export interface IncrementActiveUsers {
   value: string;
-  graphData: {name: string; activeUsers: number}[];
+  graphData: { name: string; activeUsers: number }[];
 }
 
 export interface ExtraRevenue {
   value: string;
-  graphData: {name: string; revenue: number}[];
+  graphData: { name: string; revenue: number }[];
 }
 
 export interface TrafficRaise {
   value: string;
-  graphData: {name: string; traffic: number}[];
+  graphData: { name: string; traffic: number }[];
 }
 
 export interface LessOrders {
   value: string;
-  graphData: {name: string; orders: number}[];
+  graphData: { name: string; orders: number }[];
 }
 
-export interface SalesData {
-  salesToday: string;
-  salesYesterday: string;
-  salesGraphData: {day: number; number: number}[];
-}
+// export interface SalesData {
+//   salesToday: string;
+//   salesYesterday: string;
+//   salesGraphData: { day: number; number: number }[];
+// }
 
 export interface EarningInMonthData {
   id: number;
@@ -50,16 +50,16 @@ export interface EarningInMonthData {
 }
 
 export interface SubscriptionData {
-  dataOne: {number: number; value: number}[];
-  dataTwo: {number: number; value: number}[];
-  dataThree: {number: number; value: number}[];
+  dataOne: { number: number; value: number }[];
+  dataTwo: { number: number; value: number }[];
+  dataThree: { number: number; value: number }[];
 }
 
 export interface MetricsLineGraphData {
   value: string;
   difference: string;
   differencePercent: string;
-  graphData: {number: string; value: number}[];
+  graphData: { number: string; value: number }[];
 }
 
 export interface SalesData {
@@ -67,7 +67,7 @@ export interface SalesData {
   change: number;
   strokeColor: string;
   areaColor: string;
-  graphData: {number: string; value: number}[];
+  graphData: { number: string; value: number }[];
 }
 
 export interface MetricsFloatingGraphData {
@@ -81,9 +81,9 @@ export interface VisitsData {
   new: number;
   returning: number;
   graphData: {
-    dataOne: {number: string; value: number}[];
-    dataTwo: {number: string; value: number}[];
-    dataThree: {number: string; value: number}[];
+    dataOne: { number: string; value: number }[];
+    dataTwo: { number: string; value: number }[];
+    dataThree: { number: string; value: number }[];
   };
 }
 
@@ -91,20 +91,20 @@ export interface OrdersData {
   revenue: number;
   orders: number;
   graphData: {
-    dataOne: {number: number; value: number}[];
-    dataTwo: {number: number; value: number}[];
-    dataThree: {number: number; value: number}[];
+    dataOne: { number: number; value: number }[];
+    dataTwo: { number: number; value: number }[];
+    dataThree: { number: number; value: number }[];
   };
 }
 
 export interface ProfileViewsData {
   views: string;
-  graphData: {day: number; number: number}[];
+  graphData: { day: number; number: number }[];
 }
 
 export interface WorkViewsData {
   views: string;
-  graphData: {name: string; value: number}[];
+  graphData: { name: string; value: number }[];
 }
 
 export interface SocialData {

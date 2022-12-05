@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface SidebarWrapperProps {
   children: ReactNode;
@@ -7,7 +7,10 @@ interface SidebarWrapperProps {
   [x: string]: any;
 }
 
-const SidebarWrapper: React.FC<SidebarWrapperProps> = ({children, ...rest}) => {
+const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
+  children,
+  ...rest
+}) => {
   return (
     <Box
       sx={{
@@ -15,7 +18,7 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({children, ...rest}) => {
         display: 'flex',
         flexDirection: 'column',
         transition: 'all 0.5s ease',
-        position: {xs: 'relative', lg: 'fixed'},
+        position: { xs: 'relative', lg: 'fixed' },
         top: 0,
         left: 0,
         zIndex: 1101,

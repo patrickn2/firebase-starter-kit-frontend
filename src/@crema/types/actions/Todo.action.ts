@@ -69,7 +69,7 @@ export interface UpdateTaskDetailAction {
 
 export interface UpdateTodoFolderAction {
   type: typeof UPDATE_TASK_FOLDER;
-  payload: {list: TodoObj[]; total: number};
+  payload: { list: TodoObj[]; total: number };
 }
 
 export interface UpdateTodoLabelAction {
@@ -79,7 +79,7 @@ export interface UpdateTodoLabelAction {
 
 export interface UpdateTaskStaredAction {
   type: typeof UPDATE_TASK_STARRED_STATUS;
-  payload: {data: TodoObj[]; folderName: string};
+  payload: { data: TodoObj[]; folderName: string };
 }
 
 export interface GetTaskListStatusAction {

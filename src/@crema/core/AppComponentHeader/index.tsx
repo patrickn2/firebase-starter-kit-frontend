@@ -1,10 +1,10 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import LinkIcon from '@mui/icons-material/Link';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AppAnimate from '../AppAnimate';
-import {Fonts} from '../../../shared/constants/AppEnums';
 
 interface AppComponentHeaderProps {
   title: string;
@@ -22,18 +22,18 @@ const AppComponentHeader: React.FC<AppComponentHeaderProps> = ({
       <Box
         sx={{
           display: 'flex',
-          flexDirection: {xs: 'column', sm: 'row'},
-          justifyContent: {sm: 'space-between'},
+          flexDirection: { xs: 'column', sm: 'row' },
+          justifyContent: { sm: 'space-between' },
           pb: 4,
         }}
       >
-        <Box sx={{mb: 3, pr: {sm: 3}, flex: {sm: 1}}}>
+        <Box sx={{ mb: 3, pr: { sm: 3 }, flex: { sm: 1 } }}>
           <Typography
             component='h3'
             sx={{
               color: (theme) => theme.palette.text.primary,
               fontWeight: Fonts.MEDIUM,
-              fontSize: {xs: 18, sm: 20},
+              fontSize: { xs: 18, sm: 20 },
             }}
           >
             {title}
@@ -52,14 +52,14 @@ const AppComponentHeader: React.FC<AppComponentHeaderProps> = ({
           ) : null}
         </Box>
         {refUrl ? (
-          <Box sx={{height: 40}}>
+          <Box sx={{ height: 40 }}>
             <Button
               variant='outlined'
               color='primary'
               href={refUrl}
               target='_blank'
             >
-              Reference <LinkIcon sx={{pl: 1}} />
+              Reference <LinkIcon sx={{ pl: 1 }} />
             </Button>
           </Box>
         ) : null}

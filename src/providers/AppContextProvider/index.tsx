@@ -1,14 +1,16 @@
-import React, {ReactNode} from 'react';
-import ThemeContextProvider from './ThemeContextProvider';
-import LocaleContextProvider from './LocaleContextProvide';
+import React, { ReactNode } from 'react';
 import LayoutContextProvider from './LayoutContextProvider';
+import LocaleContextProvider from './LocaleContextProvide';
 import SidebarContextProvider from './SidebarContextProvider';
+import ThemeContextProvider from './ThemeContextProvider';
 
 interface AppContextProviderProps {
   children: ReactNode;
 }
 
-const AppContextProvider: React.FC<AppContextProviderProps> = ({children}) => {
+const AppContextProvider: React.FC<AppContextProviderProps> = ({
+  children,
+}) => {
   return (
     <ThemeContextProvider>
       <LocaleContextProvider>

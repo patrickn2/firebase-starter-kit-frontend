@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface UserMiniHeaderWrapperProps {
   children: ReactNode;
@@ -19,22 +19,22 @@ const UserMiniHeaderWrapper: React.FC<UserMiniHeaderWrapperProps> = ({
         flexDirection: 'column',
         position: 'relative',
         backgroundColor: (theme) => theme.palette.background.default,
-        paddingTop: {xs: 14, sm: 17.5},
+        paddingTop: { xs: 14, sm: 17.5 },
         '& .mainContent': {
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
-          width: {xs: '100%', lg: 'calc(100% - 280px)'},
+          width: { xs: '100%', lg: 'calc(100% - 280px)' },
           transition: 'all 0.5s ease',
-          ml: {lg: '280px'},
+          ml: { lg: '280px' },
         },
         '&.mini-sidebar-collapsed': {
           '& .mainContent': {
-            width: {lg: 'calc(100% - 64px)'},
-            ml: {lg: '64px'},
+            width: { lg: 'calc(100% - 64px)' },
+            ml: { lg: '64px' },
           },
           '& .user-mini-header-sidebar:not(:hover)': {
-            width: {lg: 64},
+            width: { lg: 64 },
             '& .nav-item-header, & .nav-item-content, & .menu-badge, & .collapse-children, & .nav-item-icon-arrow-btn':
               {
                 display: 'none',
@@ -80,7 +80,7 @@ const UserMiniHeaderWrapper: React.FC<UserMiniHeaderWrapperProps> = ({
           },
         },
         '&.appMainFixedFooter': {
-          pb: {xs: 12, xl: 14.5},
+          pb: { xs: 12, xl: 14.5 },
         },
       }}
       {...rest}

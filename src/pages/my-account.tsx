@@ -1,4 +1,4 @@
-import {AppLoader} from '@crema';
+import { AppLoader } from '@crema';
 import AppPage from '@crema/hoc/AppPage';
 import dynamic from 'next/dynamic';
 import React from 'react';

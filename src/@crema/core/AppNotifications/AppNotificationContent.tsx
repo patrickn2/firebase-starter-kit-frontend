@@ -1,15 +1,15 @@
-import React from 'react';
-import notification from '@crema/services/db/notifications';
-import {IconButton, Theme} from '@mui/material';
-import List from '@mui/material/List';
-import Button from '@mui/material/Button';
 import AppScrollbar from '@crema/core/AppScrollbar';
+import notification from '@crema/services/db/notifications';
 import IntlMessages from '@crema/utility/IntlMessages';
-import NotificationItem from './NotificationItem';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
-import Typography from '@mui/material/Typography';
+import { IconButton, Theme } from '@mui/material';
 import Box from '@mui/material/Box';
-import {SxProps} from '@mui/system';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Typography from '@mui/material/Typography';
+import { SxProps } from '@mui/system';
+import React from 'react';
+import NotificationItem from './NotificationItem';
 
 interface AppNotificationContentProps {
   onClose: () => void;
@@ -37,7 +37,7 @@ const AppNotificationContent: React.FC<AppNotificationContentProps> = ({
           alignItems: 'center',
           borderBottom: 1,
           borderBottomColor: (theme) => theme.palette.divider,
-          minHeight: {xs: 56, sm: 70},
+          minHeight: { xs: 56, sm: 70 },
         }}
       >
         <Typography component='h3'>
@@ -58,10 +58,10 @@ const AppNotificationContent: React.FC<AppNotificationContentProps> = ({
       </Box>
       <AppScrollbar
         sx={{
-          height: {xs: 'calc(100% - 96px)', sm: 'calc(100% - 110px)'},
+          height: { xs: 'calc(100% - 96px)', sm: 'calc(100% - 110px)' },
         }}
       >
-        <List sx={{py: 0}}>
+        <List sx={{ py: 0 }}>
           {notification.map((item) => (
             <NotificationItem key={item.id} item={item} />
           ))}

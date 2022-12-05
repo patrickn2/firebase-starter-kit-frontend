@@ -1,6 +1,3 @@
-import React, {ReactNode} from 'react';
-import Button from '@mui/material/Button';
-import IntlMessages from '../../utility/IntlMessages';
 import {
   Dialog,
   DialogActions,
@@ -9,8 +6,11 @@ import {
   Slide,
   Typography,
 } from '@mui/material';
-import {Fonts} from '../../../shared/constants/AppEnums';
-import {TransitionProps} from '@mui/material/transitions';
+import Button from '@mui/material/Button';
+import { TransitionProps } from '@mui/material/transitions';
+import React, { ReactNode } from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
+import IntlMessages from '../../utility/IntlMessages';
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -57,7 +57,7 @@ const AppConfirmDialog: React.FC<AppConfirmDialogProps> = ({
         </Typography>
       </DialogTitle>
       <DialogContent
-        sx={{color: 'text.secondary', fontSize: 14}}
+        sx={{ color: 'text.secondary', fontSize: 14 }}
         id='alert-dialog-description'
       >
         {title}

@@ -68,14 +68,6 @@ function TransitionLeft(props: any) {
   return <Slide {...props} direction='left' />;
 }
 
-interface AppMessageViewProps {
-  className?: string;
-  message: string;
-  variant: 'success' | 'error' | 'warning' | 'info';
-
-  [x: string]: any;
-}
-
 const GeneralAlert = (props) => {
   const { clearAlertErrorMessage } = useCommon();
   const [open, setOpen] = React.useState(false);

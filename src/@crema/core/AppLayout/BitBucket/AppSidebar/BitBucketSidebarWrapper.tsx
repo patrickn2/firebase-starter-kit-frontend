@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface BitBucketSidebarWrapperProps {
   children: ReactNode;
@@ -35,7 +35,7 @@ const BitBucketSidebarWrapper: React.FC<BitBucketSidebarWrapperProps> = ({
           color: (theme) => theme.palette.primary.contrastText,
           cursor: 'pointer',
           zIndex: 99,
-          display: {xs: 'none', lg: 'block'},
+          display: { xs: 'none', lg: 'block' },
           '& svg': {
             display: 'block',
           },

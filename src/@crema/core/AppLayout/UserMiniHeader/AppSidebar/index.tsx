@@ -1,9 +1,9 @@
 import Drawer from '@mui/material/Drawer';
 import Hidden from '@mui/material/Hidden';
 import clsx from 'clsx';
-import {useSettings} from 'hooks/useSettings';
+import { useSettings } from 'hooks/useSettings';
 import React from 'react';
-import {useLayoutContext} from '../../../../utility/AppContextProvider/LayoutContextProvider';
+import { useLayoutContext } from '../../../../../providers/AppContextProvider/LayoutContextProvider';
 import AppScrollbar from '../../../AppScrollbar';
 import MainSidebar from '../../components/MainSidebar';
 import VerticalNav from '../../components/VerticalNav';
@@ -18,9 +18,9 @@ const AppSidebar: React.FC<AppSidebarProps> = ({
   variant = '',
   position = 'left',
 }) => {
-  const {settings, toggleNavCollapsed} = useSettings();
+  const { settings, toggleNavCollapsed } = useSettings();
 
-  const {footer, footerType} = useLayoutContext();
+  const { footer, footerType } = useLayoutContext();
 
   return (
     <>
@@ -33,7 +33,7 @@ const AppSidebar: React.FC<AppSidebarProps> = ({
             root: clsx(variant),
             paper: clsx(variant),
           }}
-          style={{position: 'absolute'}}
+          style={{ position: 'absolute' }}
         >
           <UserMiniHeaderSidebarWrapper className='user-mini-header-sidebar'>
             <MainSidebar>

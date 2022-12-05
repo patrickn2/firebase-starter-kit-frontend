@@ -12,7 +12,7 @@ export interface RevenueCards {
   growth: number;
   icon: string;
   strokeColor: string;
-  graphData: {month: string; number: number}[];
+  graphData: { month: string; number: number }[];
 }
 
 export interface SalesStateData {
@@ -39,7 +39,7 @@ export interface ActiveVisitorsProps {
   growth: number;
   value: number;
   slug: string;
-  graphData: {time: string; value: number}[];
+  graphData: { time: string; value: number }[];
 }
 
 export interface TopSellingProduct {

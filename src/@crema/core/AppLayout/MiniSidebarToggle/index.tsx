@@ -1,23 +1,23 @@
-import React, {ReactNode, useState} from 'react';
-import AppSidebar from './AppSidebar';
-import {AppContentView} from '../../../index';
-import AppThemeSetting from '../../AppThemeSetting';
-import AppHeader from './AppHeader';
-import clsx from 'clsx';
 import Box from '@mui/material/Box';
-import MiniSidebarToggleWrapper from './MiniSidebarToggleWrapper';
+import clsx from 'clsx';
+import React, { ReactNode, useState } from 'react';
+import { useLayoutContext } from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
+import { AppContentView } from '../../../index';
+import AppThemeSetting from '../../AppThemeSetting';
 import AppFixedFooter from './AppFixedFooter';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import AppHeader from './AppHeader';
+import AppSidebar from './AppSidebar';
 import MiniSidebarToggleContainer from './MiniSidebarToggleContainer';
+import MiniSidebarToggleWrapper from './MiniSidebarToggleWrapper';
 
 interface MiniSidebarToggleProps {
   children: ReactNode;
 }
 
-const MiniSidebarToggle: React.FC<MiniSidebarToggleProps> = ({children}) => {
+const MiniSidebarToggle: React.FC<MiniSidebarToggleProps> = ({ children }) => {
   const [isCollapsed, setCollapsed] = useState(false);
-  const {footer, layoutType, headerType, footerType} = useLayoutContext();
+  const { footer, layoutType, headerType, footerType } = useLayoutContext();
 
   return (
     <MiniSidebarToggleContainer

@@ -1,4 +1,4 @@
-import {BoardObj, CardListObj} from '../models/apps/ScrumbBoard';
+import { BoardObj, CardListObj } from '../models/apps/ScrumbBoard';
 
 export const ADD_BOARD_LIST = 'ADD_BOARD_LIST';
 export const ADD_LIST_CARD = 'ADD_LIST_CARD';

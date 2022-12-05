@@ -1,4 +1,4 @@
-import {zhCN} from '@mui/material/locale';
+import { zhCN } from '@mui/material/locale';
 import zhMessages from '../locales/zh-Hans.json';
 
 const ZhLan = {

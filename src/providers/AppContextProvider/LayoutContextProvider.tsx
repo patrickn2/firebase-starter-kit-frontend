@@ -1,6 +1,6 @@
-import React, {createContext, useCallback, useContext, useState} from 'react';
-import defaultConfig from './defaultConfig';
 import PropTypes from 'prop-types';
+import React, { createContext, useCallback, useContext, useState } from 'react';
+import defaultConfig from './defaultConfig';
 
 export interface LayoutData {
   layoutType: string;
@@ -38,7 +38,7 @@ export const useLayoutContext = () => useContext(LayoutContext);
 
 export const useLayoutActionsContext = () => useContext(LayoutActionsContext);
 
-const LayoutContextProvider: React.FC<React.ReactNode> = ({children}) => {
+const LayoutContextProvider: React.FC<React.ReactNode> = ({ children }) => {
   const [layoutType, updateLayoutType] = useState<string>(
     defaultConfig.layoutType,
   );

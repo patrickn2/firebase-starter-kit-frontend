@@ -1,9 +1,9 @@
-import React from 'react';
 import CheckIcon from '@mui/icons-material/Check';
-import IntlMessages from '../../utility/IntlMessages';
+import { Theme } from '@mui/material';
 import Box from '@mui/material/Box';
-import {Theme} from '@mui/material';
-import {SxProps} from '@mui/system';
+import { SxProps } from '@mui/system';
+import React from 'react';
+import IntlMessages from '../../utility/IntlMessages';
 
 interface AppSelectedIconProps {
   backgroundColor?: string;
@@ -16,7 +16,7 @@ const AppSelectedIcon: React.FC<AppSelectedIconProps> = ({
   isCenter = true,
   color,
 }) => {
-  let centerStyle: SxProps<Theme> = isCenter
+  const centerStyle: SxProps<Theme> = isCenter
     ? {
         position: 'absolute',
         left: '50%',

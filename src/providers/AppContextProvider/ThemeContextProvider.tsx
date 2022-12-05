@@ -1,3 +1,5 @@
+import { ThemeOptions } from '@mui/material';
+import PropTypes from 'prop-types';
 import React, {
   createContext,
   useCallback,
@@ -5,30 +7,29 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import { LayoutDirection, ThemeMode } from '../../shared/constants/AppEnums';
 import defaultConfig, {
+  adminTheme,
   backgroundDark,
   backgroundLight,
-  defaultTheme,
   textDark,
   textLight,
 } from './defaultConfig';
-import PropTypes from 'prop-types';
-import {LayoutDirection, ThemeMode} from '../../../shared/constants/AppEnums';
 
 export interface ThemeData {
-  theme: any;
+  theme: ThemeOptions;
   themeMode: string;
   themeStyle: string;
 }
 
 export interface ThemeActions {
-  updateTheme: (theme: any) => void;
+  updateTheme: (theme: ThemeOptions) => void;
   updateThemeMode: (themeMode: string) => void;
   updateThemeStyle: (themeStyle: string) => void;
 }
 
 export const ThemeContext = createContext<ThemeData>({
-  theme: defaultTheme.theme,
+  theme: adminTheme,
   themeMode: defaultConfig.themeMode,
   themeStyle: defaultConfig.themeStyle,
 });
@@ -43,8 +44,8 @@ export const useThemeContext = () => useContext(ThemeContext);
 
 export const useThemeActionsContext = () => useContext(ThemeActionsContext);
 
-const ThemeContextProvider: React.FC<React.ReactNode> = ({children}) => {
-  const [theme, setTheme] = useState<any>(defaultTheme.theme);
+const ThemeContextProvider: React.FC<React.ReactNode> = ({ children }) => {
+  const [theme, setTheme] = useState<ThemeOptions>(adminTheme);
   const [themeMode, updateThemeMode] = useState<string>(
     defaultConfig.themeMode,
   );
@@ -52,7 +53,7 @@ const ThemeContextProvider: React.FC<React.ReactNode> = ({children}) => {
     defaultConfig.themeStyle,
   );
 
-  const updateTheme = useCallback((theme) => {
+  const updateTheme = useCallback((theme: ThemeOptions) => {
     setTheme(theme);
   }, []);
 

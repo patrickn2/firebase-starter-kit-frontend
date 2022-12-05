@@ -1,6 +1,6 @@
-import React from 'react';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import React from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 interface BadgeProps {
   className?: string;
@@ -8,7 +8,7 @@ interface BadgeProps {
   color?: string;
 }
 
-const AppBadge: React.FC<BadgeProps> = ({count, color = 'secondary'}) => {
+const AppBadge: React.FC<BadgeProps> = ({ count, color = 'secondary' }) => {
   if (color === 'primary') {
     color = 'primary.main';
   } else if (color === 'v') {

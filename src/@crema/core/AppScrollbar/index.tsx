@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
+import React, { ReactNode } from 'react';
 import SimpleBarReact from 'simplebar-react';
 import 'simplebar/src/simplebar.css';
 
@@ -16,7 +16,7 @@ interface AppScrollbarProps {
 }
 
 const AppScrollbar: React.FC<AppScrollbarProps> = (props) => {
-  const {children, ...others} = props;
+  const { children, ...others } = props;
 
   return <StyledSimpleBarReact {...others}>{children}</StyledSimpleBarReact>;
 };

@@ -3,7 +3,7 @@ import {
   backgroundLight,
   textDark,
   textLight,
-} from '../../@crema/utility/AppContextProvider/defaultConfig';
+} from '../../providers/AppContextProvider/defaultConfig';
 
 const colorSet = [
   {

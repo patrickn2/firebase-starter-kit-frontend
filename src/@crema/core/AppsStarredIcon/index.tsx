@@ -1,14 +1,17 @@
-import React from 'react';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
-import {Checkbox} from '@mui/material';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { Checkbox } from '@mui/material';
+import React from 'react';
 
 interface AppsStarredIconProps {
   item: any;
   onChange: (checked: boolean, item: any) => void;
 }
 
-const AppsStarredIcon: React.FC<AppsStarredIconProps> = ({item, onChange}) => {
+const AppsStarredIcon: React.FC<AppsStarredIconProps> = ({
+  item,
+  onChange,
+}) => {
   return (
     <Checkbox
       sx={{

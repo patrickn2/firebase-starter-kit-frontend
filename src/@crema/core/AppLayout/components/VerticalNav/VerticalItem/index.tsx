@@ -5,8 +5,8 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
+import { useAuthUser } from '../../../../../../hooks/useAuthUser';
 import { RouterConfigData } from '../../../../../../modules/routesConfig';
-import { useAuthUser } from '../../../../../utility/AuthHooks';
 import { checkPermission } from '../../../../../utility/helper/RouteHelper';
 import IntlMessages from '../../../../../utility/IntlMessages';
 import VerticalNavItem from './VerticalNavItem';
@@ -29,7 +29,7 @@ const VerticalItem: React.FC<VerticalItemProps> = ({ level, item }) => {
   }
 
   return (
-    <Link href={item.url!} as={item.as}>
+    <Link href={item.url ?? ''} as={item.as}>
       <a style={{ textDecoration: 'none' }}>
         <VerticalNavItem
           active={item.url === router.pathname}

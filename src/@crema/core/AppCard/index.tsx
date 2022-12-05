@@ -1,11 +1,11 @@
-import React, {isValidElement, ReactNode} from 'react';
+import { Box, Button, CardHeader } from '@mui/material';
 import Card from '@mui/material/Card';
-import {Box, Button, CardHeader} from '@mui/material';
-import {Fonts} from 'shared/constants/AppEnums';
-import Link from '@mui/material/Link';
-import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import {MessageFormatElement} from 'react-intl';
+import CardContent from '@mui/material/CardContent';
+import Link from '@mui/material/Link';
+import React, { isValidElement, ReactNode } from 'react';
+import { MessageFormatElement } from 'react-intl';
+import { Fonts } from 'shared/constants/AppEnums';
 
 interface AppCardProps {
   title?: string | MessageFormatElement[] | ReactNode;
@@ -37,7 +37,10 @@ const AppCard: React.FC<AppCardProps> = ({
   ...rest
 }) => {
   return (
-    <Card sx={{display: 'flex', flexDirection: 'column', ...sxStyle}} {...rest}>
+    <Card
+      sx={{ display: 'flex', flexDirection: 'column', ...sxStyle }}
+      {...rest}
+    >
       {title || action ? (
         <CardHeader
           sx={{
@@ -119,7 +122,7 @@ const AppCard: React.FC<AppCardProps> = ({
           ) : (
             <Box
               component='span'
-              sx={{ml: footerPosition === 'right' ? 'auto' : 0}}
+              sx={{ ml: footerPosition === 'right' ? 'auto' : 0 }}
             >
               <Button
                 color='secondary'

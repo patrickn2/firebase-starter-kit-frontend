@@ -8,11 +8,11 @@ import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import {alpha} from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
-import {useSettings} from 'hooks/useSettings';
+import { useSettings } from 'hooks/useSettings';
 import React from 'react';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../../../providers/AppContextProvider/SidebarContextProvider';
 import AppMessages from '../../../AppMessages';
 import AppNotifications from '../../../AppNotifications';
 import AppTooltip from '../../../AppTooltip';
@@ -23,9 +23,9 @@ import NotificationBar from '../NotificationBar';
 import HeaderNavWrapper from './HeaderNavWrapper';
 
 const AppHeader = () => {
-  const {toggleNavCollapsed} = useSettings();
+  const { toggleNavCollapsed } = useSettings();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const {sidebarBgColor, sidebarTextColor} = useSidebarContext();
+  const { sidebarBgColor, sidebarTextColor } = useSidebarContext();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -50,8 +50,8 @@ const AppHeader = () => {
         <Toolbar
           sx={{
             boxSizing: 'border-box',
-            minHeight: {xs: 56, sm: 70},
-            px: {xs: 0},
+            minHeight: { xs: 56, sm: 70 },
+            px: { xs: 0 },
             borderBottom: (theme) =>
               `solid 1px ${alpha(theme.palette.common.black, 0.15)}`,
             backgroundColor: sidebarBgColor,
@@ -61,7 +61,7 @@ const AppHeader = () => {
           <Box
             sx={{
               width: '100%',
-              maxWidth: {lg: 1140, xl: 1420},
+              maxWidth: { lg: 1140, xl: 1420 },
               mx: 'auto',
               px: 5,
               display: 'flex',
@@ -96,7 +96,7 @@ const AppHeader = () => {
                   pl: 0,
                 },
                 '& .logo-text': {
-                  display: {xs: 'none', sm: 'block'},
+                  display: { xs: 'none', sm: 'block' },
                 },
               }}
             >
@@ -112,17 +112,17 @@ const AppHeader = () => {
               sx={{
                 minHeight: 40,
                 position: 'relative',
-                display: {xs: 'none', sm: 'block'},
+                display: { xs: 'none', sm: 'block' },
                 '& .searchRoot': {
-                  position: {xs: 'absolute', sm: 'relative'},
-                  right: {xs: 0, sm: 'auto'},
-                  top: {xs: 0, sm: 'auto'},
+                  position: { xs: 'absolute', sm: 'relative' },
+                  right: { xs: 0, sm: 'auto' },
+                  top: { xs: 0, sm: 'auto' },
                 },
               }}
             >
               <AppSearchBar iconPosition='right' placeholder='Search…' />
             </Box>
-            <Box sx={{ml: 4}}>
+            <Box sx={{ ml: 4 }}>
               <AppLngSwitcher iconOnly={true} tooltipPosition='bottom' />
             </Box>
 
@@ -162,14 +162,14 @@ const AppHeader = () => {
 
               <Box
                 sx={{
-                  ml: {sm: 4},
-                  mr: {xs: 4, sm: 0},
-                  minWidth: {md: 220},
+                  ml: { sm: 4 },
+                  mr: { xs: 4, sm: 0 },
+                  minWidth: { md: 220 },
                   '& .user-info-view': {
                     p: 0,
                   },
                   '& .user-info': {
-                    display: {xs: 'none', md: 'block'},
+                    display: { xs: 'none', md: 'block' },
                     color: 'inherit',
                   },
                 }}
@@ -243,7 +243,7 @@ const AppHeader = () => {
             <Box
               sx={{
                 width: '100%',
-                maxWidth: {lg: 1140, xl: 1436},
+                maxWidth: { lg: 1140, xl: 1436 },
                 mx: 'auto',
                 px: 5,
               }}

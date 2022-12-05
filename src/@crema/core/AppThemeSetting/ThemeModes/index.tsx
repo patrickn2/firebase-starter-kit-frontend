@@ -1,24 +1,24 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import clsx from 'clsx';
-import {CustomizerItemWrapper, StyledToggleButton} from '../index.style';
-import IntlMessages from '../../../utility/IntlMessages';
-import {ThemeMode} from '../../../../shared/constants/AppEnums';
-import {
-  useThemeActionsContext,
-  useThemeContext,
-} from '../../../utility/AppContextProvider/ThemeContextProvider';
-import {useSidebarActionsContext} from '../../../utility/AppContextProvider/SidebarContextProvider';
+import React from 'react';
 import {
   DarkSidebar,
   LightSidebar,
-} from '../../../utility/AppContextProvider/defaultConfig';
+} from '../../../../providers/AppContextProvider/defaultConfig';
+import { useSidebarActionsContext } from '../../../../providers/AppContextProvider/SidebarContextProvider';
+import {
+  useThemeActionsContext,
+  useThemeContext,
+} from '../../../../providers/AppContextProvider/ThemeContextProvider';
+import { ThemeMode } from '../../../../shared/constants/AppEnums';
+import IntlMessages from '../../../utility/IntlMessages';
+import { CustomizerItemWrapper, StyledToggleButton } from '../index.style';
 
 const ThemeModes = () => {
-  const {updateThemeMode} = useThemeActionsContext();
-  const {updateSidebarColorSet} = useSidebarActionsContext();
-  const {themeMode, theme} = useThemeContext();
+  const { updateThemeMode } = useThemeActionsContext();
+  const { updateSidebarColorSet } = useSidebarActionsContext();
+  const { themeMode } = useThemeContext();
 
   const onModeChange = (event: any, themeMode: string) => {
     if (themeMode) {
@@ -49,7 +49,7 @@ const ThemeModes = () => {
 
   return (
     <CustomizerItemWrapper>
-      <Box component='h4' sx={{mb: 2}}>
+      <Box component='h4' sx={{ mb: 2 }}>
         <IntlMessages id='customizer.themeMode' />
       </Box>
       <ToggleButtonGroup
@@ -71,9 +71,7 @@ const ThemeModes = () => {
         <StyledToggleButton
           value={ThemeMode.DARK}
           className={clsx({
-            active:
-              themeMode === ThemeMode.DARK ||
-              theme.palette.type === ThemeMode.DARK,
+            active: themeMode === ThemeMode.DARK,
           })}
           aria-label='centered'
         >

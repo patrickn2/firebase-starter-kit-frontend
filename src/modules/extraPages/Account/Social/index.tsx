@@ -1,12 +1,12 @@
-import React from 'react';
+import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import {Typography} from '@mui/material';
-import {Fonts} from '../../../../shared/constants/AppEnums';
-import IntlMessages from '../../../../@crema/utility/IntlMessages';
-import {Formik} from 'formik';
-import SocialForm from './SocialForm';
+import { Formik } from 'formik';
+import React from 'react';
 import * as yup from 'yup';
-import {MemberData} from '../../../../@crema/services/db/extraPages/account';
+import { MemberData } from '../../../../@crema/services/db/extraPages/account';
+import IntlMessages from '../../../../@crema/utility/IntlMessages';
+import { Fonts } from '../../../../shared/constants/AppEnums';
+import SocialForm from './SocialForm';
 
 const validationSchema = yup.object({
   twitter: yup.string().label('Please Enter your Twitter url'),
@@ -21,15 +21,15 @@ interface SocialProps {
   social: MemberData[];
 }
 
-const Social: React.FC<SocialProps> = ({social}) => {
+const Social: React.FC<SocialProps> = ({ social }) => {
   return (
-    <Box sx={{position: 'relative'}}>
+    <Box sx={{ position: 'relative' }}>
       <Typography
         component='h3'
         sx={{
           fontSize: 16,
           fontWeight: Fonts.BOLD,
-          mb: {xs: 3, lg: 5},
+          mb: { xs: 3, lg: 5 },
         }}
       >
         <IntlMessages id='common.socialLinks' />
@@ -46,10 +46,10 @@ const Social: React.FC<SocialProps> = ({social}) => {
           quora: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(data, {setSubmitting}) => {
+        onSubmit={(data, { setSubmitting }) => {
           setSubmitting(true);
           console.log('data: ', data);
-          //TODO Api Call here to save user info
+          // TODO Api Call here to save user info
           setSubmitting(false);
         }}
       >

@@ -1,5 +1,5 @@
-import React from 'react';
 import TablePagination from '@mui/material/TablePagination';
+import React from 'react';
 
 interface AppsPaginationProps {
   count: number;
@@ -26,8 +26,8 @@ const AppsPagination: React.FC<AppsPaginationProps> = ({
       count={count}
       rowsPerPage={rowsPerPage}
       page={page}
-      backIconButtonProps={{'aria-label': 'Previous Page'}}
-      nextIconButtonProps={{'aria-label': 'Next Page'}}
+      backIconButtonProps={{ 'aria-label': 'Previous Page' }}
+      nextIconButtonProps={{ 'aria-label': 'Next Page' }}
       onPageChange={onPageChange}
       rowsPerPageOptions={[]}
       {...rest}

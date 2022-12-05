@@ -1,22 +1,22 @@
-import React, {ReactNode} from 'react';
-import clsx from 'clsx';
 import AppContentView from '@crema/core/AppContentView';
+import clsx from 'clsx';
+import React, { ReactNode } from 'react';
+import { useLayoutContext } from '../../../../providers/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
+import AppThemeSetting from '../../AppThemeSetting';
 import AppFixedFooter from './AppFixedFooter';
 import AppHeader from './AppHeader';
 import AppSidebar from './AppSidebar';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import AppThemeSetting from '../../AppThemeSetting';
+import HorHeaderFixedContainer from './HorHeaderFixedContainer';
 import HorHeaderFixedWrapper from './HorHeaderFixedWrapper';
 import MainContent from './MainContent';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
-import HorHeaderFixedContainer from './HorHeaderFixedContainer';
 
 interface HorHeaderFixedProps {
   children: ReactNode;
 }
 
-const HorHeaderFixed: React.FC<HorHeaderFixedProps> = ({children}) => {
-  const {footer, layoutType, footerType} = useLayoutContext();
+const HorHeaderFixed: React.FC<HorHeaderFixedProps> = ({ children }) => {
+  const { footer, layoutType, footerType } = useLayoutContext();
 
   return (
     <HorHeaderFixedContainer

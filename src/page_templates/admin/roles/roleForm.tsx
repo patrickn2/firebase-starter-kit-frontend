@@ -84,14 +84,14 @@ const roleForm = ({
   });
 
   const getRouteUrls = (routeList: RouterConfigData[]) => {
-    let routes: {
+    const routes: {
       url: RouteList;
       collections: CollectionList | CollectionList[];
     }[] = [];
     routeList.forEach((route) => {
       if (route.url && route.collections)
         routes.push({
-          url: route.url as RouteList,
+          url: route.url,
           collections: route.collections,
         });
       if (route.children) {
@@ -126,8 +126,8 @@ const roleForm = ({
   }, [routesConfig, fields]);
 
   const onSubmit: SubmitHandler<UseRoleFormProps> = (data) => {
-    let routes = {} as Routes;
-    let collections = {} as Collections;
+    const routes = {} as Routes;
+    const collections = {} as Collections;
 
     const routeCollectionList = getRouteUrls(routesConfig);
 

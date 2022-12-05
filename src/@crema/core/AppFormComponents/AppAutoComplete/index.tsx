@@ -1,9 +1,9 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
+import { Chip } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
+import { AutocompleteProps } from '@mui/material/Autocomplete/Autocomplete';
 import CircularProgress from '@mui/material/CircularProgress';
-import {Chip} from '@mui/material';
-import {AutocompleteProps} from '@mui/material/Autocomplete/Autocomplete';
+import TextField from '@mui/material/TextField';
+import React from 'react';
 
 export interface AppAutoCompleteProps
   extends AutocompleteProps<any, any, any, any> {
@@ -86,7 +86,7 @@ const AppAutoComplete: React.FC<AppAutoCompleteProps> = ({
         tagValue.map((option, index) => (
           <Chip
             label={option[keyName]}
-            {...getTagProps({index})}
+            {...getTagProps({ index })}
             disabled={disabledId.indexOf(option?.[idField]) !== -1}
           />
         ))

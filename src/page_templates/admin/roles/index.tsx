@@ -54,7 +54,7 @@ const Roles = () => {
   };
 
   const handleOpenCurrentRoleModal = (role: Role) => {
-    let roleFormProps: UseRoleFormProps = {
+    const roleFormProps: UseRoleFormProps = {
       roleName: role.roleName,
       routes: [],
     };
@@ -230,7 +230,7 @@ const Roles = () => {
         onClose={handleCloseDeleteModal}
         onConfirm={confirmDeleteRole}
         title='Delete Confirmation!'
-        text={`Would you like to delete ${deleteRoleName} role?`}
+        text={`Would you like to delete ${deleteRoleName as string} role?`}
         buttonYesColor='secondary'
       />
     </>

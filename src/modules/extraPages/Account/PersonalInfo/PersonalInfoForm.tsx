@@ -1,17 +1,17 @@
-import React from 'react';
-import {alpha, Box, Button, Typography} from '@mui/material';
-import Avatar from '@mui/material/Avatar';
-import AppGridContainer from '../../../../@crema/core/AppGridContainer';
-import Grid from '@mui/material/Grid';
-import IntlMessages from '../../../../@crema/utility/IntlMessages';
-import {useDropzone} from 'react-dropzone';
-import {Form} from 'formik';
-import AppTextField from '../../../../@crema/core/AppFormComponents/AppTextField';
 import EditIcon from '@mui/icons-material/Edit';
-import {styled} from '@mui/material/styles';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { alpha, Box, Button, Typography } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
+import { Form } from 'formik';
+import React from 'react';
+import { useDropzone } from 'react-dropzone';
+import AppTextField from '../../../../@crema/core/AppFormComponents/AppTextField';
+import AppGridContainer from '../../../../@crema/core/AppGridContainer';
+import IntlMessages from '../../../../@crema/utility/IntlMessages';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
-const AvatarViewWrapper = styled('div')(({theme}) => {
+const AvatarViewWrapper = styled('div')(({ theme }) => {
   return {
     position: 'relative',
     cursor: 'pointer',
@@ -45,15 +45,15 @@ const AvatarViewWrapper = styled('div')(({theme}) => {
 });
 
 interface PersonalInfoFormProps {
-  setFieldValue: (field: string, data: any) => void;
-  values: any;
+  setFieldValue: (field: string, data: string) => void;
+  values: AuthUser | null;
 }
 
 const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({
   values,
   setFieldValue,
 }) => {
-  const {getRootProps, getInputProps} = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
     onDrop: (acceptedFiles) => {
       setFieldValue('photoURL', URL.createObjectURL(acceptedFiles[0]));
@@ -67,7 +67,7 @@ const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({
         sx={{
           fontSize: 16,
           fontWeight: Fonts.BOLD,
-          mb: {xs: 3, lg: 4},
+          mb: { xs: 3, lg: 4 },
         }}
       >
         <IntlMessages id='common.personalInfo' />
@@ -76,19 +76,19 @@ const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({
         sx={{
           display: 'flex',
           alignItems: 'center',
-          mb: {xs: 5, lg: 6},
+          mb: { xs: 5, lg: 6 },
         }}
       >
-        <AvatarViewWrapper {...getRootProps({className: 'dropzone'})}>
+        <AvatarViewWrapper {...getRootProps({ className: 'dropzone' })}>
           <input {...getInputProps()} />
           <label htmlFor='icon-button-file'>
             <Avatar
               sx={{
-                width: {xs: 50, lg: 64},
-                height: {xs: 50, lg: 64},
+                width: { xs: 50, lg: 64 },
+                height: { xs: 50, lg: 64 },
                 cursor: 'pointer',
               }}
-              src={values.photoURL}
+              src={values?.photoURL}
             />
             <Box className='edit-icon'>
               <EditIcon />
@@ -105,14 +105,14 @@ const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({
               fontWeight: Fonts.MEDIUM,
             }}
           >
-            {values.displayName}
+            {values?.displayName}
           </Typography>
           <Typography
             sx={{
               color: (theme) => theme.palette.text.secondary,
             }}
           >
-            {values.email}
+            {values?.email}
           </Typography>
         </Box>
       </Box>

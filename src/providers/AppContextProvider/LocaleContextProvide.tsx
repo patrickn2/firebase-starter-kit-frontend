@@ -1,9 +1,12 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
-import defaultConfig from './defaultConfig';
 import PropTypes from 'prop-types';
-import {useThemeActionsContext, useThemeContext} from './ThemeContextProvider';
-import {LayoutDirection} from '../../../shared/constants/AppEnums';
-import {LanguageProps} from '../../core/AppLngSwitcher/data';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { LanguageProps } from '../../@crema/core/AppLngSwitcher/data';
+import { LayoutDirection } from '../../shared/constants/AppEnums';
+import defaultConfig from './defaultConfig';
+import {
+  useThemeActionsContext,
+  useThemeContext,
+} from './ThemeContextProvider';
 
 export interface LocaleContextData {
   locale: LanguageProps;
@@ -26,10 +29,10 @@ export const useLocaleContext = () => useContext(LocaleContext);
 
 export const useLocaleActionsContext = () => useContext(LocaleActionsContext);
 
-const LocaleContextProvider: React.FC<React.ReactNode> = ({children}) => {
+const LocaleContextProvider: React.FC<React.ReactNode> = ({ children }) => {
   const [locale, updateLocale] = useState<LanguageProps>(defaultConfig.locale);
-  const {theme} = useThemeContext();
-  const {updateTheme} = useThemeActionsContext();
+  const { theme } = useThemeContext();
+  const { updateTheme } = useThemeActionsContext();
 
   useEffect(() => {
     if (

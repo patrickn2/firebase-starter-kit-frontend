@@ -1,11 +1,11 @@
-import {Metrics} from '../models/dashboards/Metrics';
-import {Analytics} from '../models/dashboards/Analytics';
-import {CRM} from '../models/dashboards/CRM';
-import {Crypto} from '../models/dashboards/Crypto';
-import {Widgets} from '../models/dashboards/Widgets';
-import {Academy} from '../models/dashboards/Academy';
-import {HealthCare} from '../models/dashboards/HealthCare';
-import {Ecommerce} from '../models/dashboards/Ecommerce';
+import { Academy } from '../models/dashboards/Academy';
+import { Analytics } from '../models/dashboards/Analytics';
+import { CRM } from '../models/dashboards/CRM';
+import { Crypto } from '../models/dashboards/Crypto';
+import { Ecommerce } from '../models/dashboards/Ecommerce';
+import { HealthCare } from '../models/dashboards/HealthCare';
+import { Metrics } from '../models/dashboards/Metrics';
+import { Widgets } from '../models/dashboards/Widgets';
 
 export const GET_ACADEMY_DATA = 'GET_ACADEMY_DATA';
 export const GET_ECOMMERCE_DATA = 'GET_ECOMMERCE_DATA';

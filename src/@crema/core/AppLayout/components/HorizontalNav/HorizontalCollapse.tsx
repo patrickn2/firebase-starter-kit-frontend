@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import {
   Grow,
   Icon,
@@ -7,18 +6,19 @@ import {
   ListItemText,
   Paper,
 } from '@mui/material';
-import clsx from 'clsx';
-import List from '@mui/material/List';
 import Box from '@mui/material/Box';
-import {Manager, Popper, Reference} from 'react-popper';
-import HorizontalItem from './HorizontalItem';
-import HorizontalGroup from './HorizontalGroup';
+import List from '@mui/material/List';
+import clsx from 'clsx';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import { Manager, Popper, Reference } from 'react-popper';
+import { RouterConfigData } from '../../../../../modules/routesConfig';
+import { useSidebarContext } from '../../../../../providers/AppContextProvider/SidebarContextProvider';
+import { useThemeContext } from '../../../../../providers/AppContextProvider/ThemeContextProvider';
 import IntlMessages from '../../../../utility/IntlMessages';
-import {useThemeContext} from '../../../../utility/AppContextProvider/ThemeContextProvider';
-import {RouterConfigData} from '../../../../../modules/routesConfig';
 import ClientOnlyPortal from './ClientPortal';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
-import {useRouter} from 'next/router';
+import HorizontalGroup from './HorizontalGroup';
+import HorizontalItem from './HorizontalItem';
 
 interface HorizontalCollapseProps {
   item: RouterConfigData;
@@ -28,11 +28,11 @@ interface HorizontalCollapseProps {
 
 const HorizontalCollapse: React.FC<HorizontalCollapseProps> = (props) => {
   const [opened, setOpened] = useState<boolean>(false);
-  const {theme} = useThemeContext();
-  const {item, nestedLevel, dense} = props;
+  const { theme } = useThemeContext();
+  const { item, nestedLevel, dense } = props;
   const location = useRouter();
   const active = isUrlInChildren(item, location.pathname);
-  const {sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor} =
+  const { sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor } =
     useSidebarContext();
 
   const handleToggle = (open: boolean) => {
@@ -53,7 +53,7 @@ const HorizontalCollapse: React.FC<HorizontalCollapseProps> = (props) => {
 
       if (
         parent.children[i].url === url ||
-        url.includes(parent!.children![i].url!)
+        url.includes(parent.children[i].url ?? '')
       ) {
         return true;
       }
@@ -74,11 +74,11 @@ const HorizontalCollapse: React.FC<HorizontalCollapseProps> = (props) => {
     >
       <Manager>
         <Reference>
-          {({ref}) => (
+          {({ ref }) => (
             <ListItem
               ref={ref}
               sx={{
-                color: theme.palette.text.primary,
+                color: theme.palette?.text?.primary ?? '',
                 padding: '0px 12px',
                 '&.active, &.active:hover, &.active:focus': {
                   backgroundColor: sidebarMenuSelectedBgColor + '!important',
@@ -108,7 +108,7 @@ const HorizontalCollapse: React.FC<HorizontalCollapseProps> = (props) => {
                   sx={{
                     color: active ? sidebarMenuSelectedTextColor : 'action',
                     mr: 3.5,
-                    fontSize: {xs: 16, xl: 18},
+                    fontSize: { xs: 16, xl: 18 },
                   }}
                 >
                   {item.icon}
@@ -136,7 +136,7 @@ const HorizontalCollapse: React.FC<HorizontalCollapseProps> = (props) => {
         </Reference>
         <ClientOnlyPortal selector='#root'>
           <Popper placement='right'>
-            {({ref, style, placement}) =>
+            {({ ref, style, placement }) =>
               opened && (
                 <Box
                   ref={ref}

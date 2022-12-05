@@ -1,9 +1,9 @@
-import React from 'react';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
+import { Box, Typography } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import ListItem from '@mui/material/ListItem';
-import {Box, Typography} from '@mui/material';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import React from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 interface MessageItemProps {
   item: {
@@ -13,7 +13,7 @@ interface MessageItemProps {
   };
 }
 
-const MessageItem: React.FC<MessageItemProps> = ({item}) => {
+const MessageItem: React.FC<MessageItemProps> = ({ item }) => {
   return (
     <ListItem
       sx={{

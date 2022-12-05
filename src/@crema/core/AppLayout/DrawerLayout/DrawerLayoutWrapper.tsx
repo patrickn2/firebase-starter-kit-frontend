@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface DrawerLayoutWrapperProps {
   children: ReactNode;
@@ -21,10 +21,10 @@ const DrawerLayoutWrapper: React.FC<DrawerLayoutWrapperProps> = ({
         backgroundColor: (theme) => theme.palette.background.default,
 
         '&.appMainFixedFooter': {
-          pb: {xs: 12, xl: 14.5},
+          pb: { xs: 12, xl: 14.5 },
         },
         '&.appMainFixedHeader': {
-          pt: {xs: 14, sm: 17.5},
+          pt: { xs: 14, sm: 17.5 },
           '& .app-bar': {
             position: 'fixed',
             top: 0,

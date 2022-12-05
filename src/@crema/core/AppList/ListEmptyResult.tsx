@@ -1,7 +1,7 @@
-import React, {ReactNode} from 'react';
-import {Box, Button, CircularProgress, Typography} from '@mui/material';
+import { Box, Button, CircularProgress, Typography } from '@mui/material';
+import React, { ReactNode } from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import IntlMessages from '../../utility/IntlMessages';
-import {Fonts} from '../../../shared/constants/AppEnums';
 
 interface ListEmptyResultProps {
   title?: string | ReactNode;
@@ -44,7 +44,7 @@ const ListEmptyResult: React.FC<ListEmptyResultProps> = ({
             }}
           >
             <CircularProgress size={16} />
-            <Box component='span' sx={{ml: 2}}>
+            <Box component='span' sx={{ ml: 2 }}>
               Loading...
             </Box>
           </Box>
@@ -96,7 +96,7 @@ const ListEmptyResult: React.FC<ListEmptyResultProps> = ({
           <Button
             color='primary'
             variant='contained'
-            sx={{mt: 7.5, height: 45, minWidth: 150}}
+            sx={{ mt: 7.5, height: 45, minWidth: 150 }}
             onClick={onClick}
           >
             {actionTitle}

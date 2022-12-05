@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface HorDefaultWrapperProps {
   children: ReactNode;
@@ -21,7 +21,7 @@ const HorDefaultWrapper: React.FC<HorDefaultWrapperProps> = ({
         backgroundColor: (theme) => theme.palette.background.default,
 
         '&.appMainFixedFooter': {
-          pb: {xs: 12, xl: 14.5},
+          pb: { xs: 12, xl: 14.5 },
         },
         '& .customizerOption': {
           top: 210,

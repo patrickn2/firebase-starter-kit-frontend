@@ -1,4 +1,4 @@
-import {ContactObj, FolderObj, LabelObj} from '../models/apps/Contact';
+import { ContactObj, FolderObj, LabelObj } from '../models/apps/Contact';
 
 export const CREATE_NEW_CONTACT = 'CREATE_NEW_CONTACT';
 export const DELETE_CONTACT = 'DELETE_CONTACT';
@@ -22,12 +22,12 @@ export interface GetContactLabelActions {
 
 export interface GetContactsActions {
   type: typeof GET_CONTACT_LIST;
-  payload: {list: ContactObj[]; total: number};
+  payload: { list: ContactObj[]; total: number };
 }
 
 export interface UpdateContactStarActions {
   type: typeof UPDATE_CONTACT_STARRED_STATUS;
-  payload: {data: ContactObj[]; folderName: string};
+  payload: { data: ContactObj[]; folderName: string };
 }
 
 export interface UpdateContactActions {
@@ -37,7 +37,7 @@ export interface UpdateContactActions {
 
 export interface UpdateContactLabelActions {
   type: typeof UPDATE_CONTACT_LABEL;
-  payload: {data: ContactObj[]; labelName: string; labelType: number};
+  payload: { data: ContactObj[]; labelName: string; labelType: number };
 }
 
 export interface CreateContactActions {
@@ -47,7 +47,7 @@ export interface CreateContactActions {
 
 export interface DeleteContactActions {
   type: typeof DELETE_CONTACT;
-  payload: {list: ContactObj[]; total: number};
+  payload: { list: ContactObj[]; total: number };
 }
 
 export interface ToggleContactDrawerActions {

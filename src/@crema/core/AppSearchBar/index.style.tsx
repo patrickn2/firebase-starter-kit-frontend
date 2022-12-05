@@ -64,36 +64,34 @@ interface SearchIconBoxProps {
   [x: string]: any;
 }
 
-export const SearchIconBox = styled('div')(
-  ({ theme, align }: SearchIconBoxProps) => ({
+export const SearchIconBox = styled('div')(({ align }: SearchIconBoxProps) => ({
+  position: 'relative',
+  marginLeft: align === 'right' ? 'auto' : 0,
+  '& .searchIconBox': {
     position: 'relative',
-    marginLeft: align === 'right' ? 'auto' : 0,
-    '& .searchIconBox': {
-      position: 'relative',
-      '& $inputInput': {
-        width: 220,
+    '& $inputInput': {
+      width: 220,
+      borderRadius: 50,
+      paddingLeft: 27,
+      '&:focus': {
+        width: 235,
         borderRadius: 50,
-        paddingLeft: 27,
-        '&:focus': {
-          width: 235,
-          borderRadius: 50,
-          paddingLeft: `calc(1em + ${4})`,
-        },
+        paddingLeft: `calc(1em + ${4})`,
       },
     },
-    '&.hs-disableFocus': {
-      '& .MuiInputBase-root': {
+  },
+  '&.hs-disableFocus': {
+    '& .MuiInputBase-root': {
+      width: '100%',
+    },
+    '& .MuiInputBase-input': {
+      width: '100%',
+      '&:focus': {
         width: '100%',
-      },
-      '& .MuiInputBase-input': {
-        width: '100%',
-        '&:focus': {
-          width: '100%',
-        },
       },
     },
-  }),
-);
+  },
+}));
 export const SearchIconWrapper = styled('div')(({ theme }) => ({
   height: '100%',
   position: 'absolute',

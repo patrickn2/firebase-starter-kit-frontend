@@ -2,21 +2,17 @@ import { TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { useCommon } from 'hooks/useCommon';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { AiOutlineGoogle, AiOutlineTwitter } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
 import { useIntl } from 'react-intl';
-import { useAuthMethod } from '../../../@crema/utility/AuthHooks';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
+import { useAuthMethod } from '../../../hooks/useAuthUser';
 import { Fonts } from '../../../shared/constants/AppEnums';
 
 const SigninFirebase = () => {
-  const { common } = useCommon();
-
   const { signInWithEmailAndPassword, signInWithPopup } = useAuthMethod();
   const { messages } = useIntl();
   const {

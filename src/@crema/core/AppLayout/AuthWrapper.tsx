@@ -1,11 +1,11 @@
-import React, {ReactNode} from 'react';
 import Box from '@mui/material/Box';
+import React, { ReactNode } from 'react';
 
 interface AuthWrapperProps {
   children: ReactNode;
 }
 
-const AuthWrapper: React.FC<AuthWrapperProps> = ({children}) => {
+const AuthWrapper: React.FC<AuthWrapperProps> = ({ children }) => {
   return (
     <Box
       sx={{

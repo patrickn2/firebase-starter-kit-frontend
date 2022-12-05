@@ -1,7 +1,7 @@
-import React, {ReactNode} from 'react';
+import { alpha } from '@mui/material';
 import ListItem from '@mui/material/ListItem';
-import {Fonts} from '../../../../../../shared/constants/AppEnums';
-import {alpha} from '@mui/material';
+import React, { ReactNode } from 'react';
+import { Fonts } from '../../../../../../shared/constants/AppEnums';
 
 interface VerticalCollapseItemProps {
   children: ReactNode;

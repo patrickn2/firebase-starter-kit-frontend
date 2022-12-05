@@ -1,11 +1,11 @@
-import React, {ReactNode} from 'react';
 import AppLoader from '@crema/core/AppLoader';
+import React, { ReactNode } from 'react';
 
 interface AppSuspenseProps {
   children: ReactNode;
 }
 
-const AppSuspense: React.FC<AppSuspenseProps> = ({children}) => {
+const AppSuspense: React.FC<AppSuspenseProps> = ({ children }) => {
   return <React.Suspense fallback={<AppLoader />}>{children}</React.Suspense>;
 };
 

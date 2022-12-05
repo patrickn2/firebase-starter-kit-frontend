@@ -1,17 +1,17 @@
-import React from 'react';
-import languageData, {LanguageProps} from './data';
-import Menu from '@mui/material/Menu';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
-import {Fonts} from 'shared/constants/AppEnums';
+import { alpha, Box } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import { Fonts } from 'shared/constants/AppEnums';
 import {
   useLocaleActionsContext,
   useLocaleContext,
-} from '../../utility/AppContextProvider/LocaleContextProvide';
-import Typography from '@mui/material/Typography';
-import {alpha, Box} from '@mui/material';
+} from '../../../providers/AppContextProvider/LocaleContextProvide';
 import AppTooltip from '../AppTooltip';
+import languageData, { LanguageProps } from './data';
 
 interface AppLngSwitcherProps {
   iconOnly?: boolean;
@@ -34,8 +34,8 @@ const AppLngSwitcher: React.FC<AppLngSwitcherProps> = ({
   iconOnly = false,
   tooltipPosition,
 }) => {
-  const {locale} = useLocaleContext();
-  const {updateLocale} = useLocaleActionsContext();
+  const { locale } = useLocaleContext();
+  const { updateLocale } = useLocaleActionsContext();
   const [anchorElLng, setAnchorElLng] = React.useState<null | HTMLElement>(
     null,
   );
@@ -76,7 +76,7 @@ const AppLngSwitcher: React.FC<AppLngSwitcherProps> = ({
               ml: 2.5,
               fontSize: 16,
               fontWeight: Fonts.REGULAR,
-              display: {xs: 'none', sm: 'inline-block'},
+              display: { xs: 'none', sm: 'inline-block' },
             },
             '& svg': {
               fontSize: 20,
@@ -116,7 +116,7 @@ const AppLngSwitcher: React.FC<AppLngSwitcherProps> = ({
                 ml: 2.5,
                 fontSize: 16,
                 fontWeight: Fonts.REGULAR,
-                display: {xs: 'none', sm: 'inline-block'},
+                display: { xs: 'none', sm: 'inline-block' },
               },
               '& svg': {
                 fontSize: 20,
@@ -151,7 +151,7 @@ const AppLngSwitcher: React.FC<AppLngSwitcherProps> = ({
               <Typography
                 sx={{
                   mb: 0,
-                  fontSize: {xs: 14, sm: 16},
+                  fontSize: { xs: 14, sm: 16 },
                   fontWeight: Fonts.MEDIUM,
                 }}
                 component='h4'

@@ -11,7 +11,7 @@ import SnackbarContent from '@mui/material/SnackbarContent';
 import { styled } from '@mui/material/styles';
 import clsx from 'clsx';
 import { useCommon } from 'hooks/useCommon';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const PREFIX = 'AppMessageView';
 
@@ -77,8 +77,8 @@ interface AppMessageViewProps {
 }
 
 const AppMessageView = (props: AppMessageViewProps) => {
-  const { common, clearAlertErrorMessage } = useCommon();
-  const [open, setOpen] = React.useState(false);
+  const { clearAlertErrorMessage } = useCommon();
+  const [open, setOpen] = useState(false);
   const { className, message, variant, ...other } = props;
   const Icon = variantIcon[variant];
   const onClose = () => {

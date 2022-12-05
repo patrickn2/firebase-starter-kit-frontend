@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface AppContentViewWrapperProps {
   children: ReactNode;
@@ -15,9 +15,9 @@ const AppContentViewWrapper: React.FC<AppContentViewWrapperProps> = ({
         display: 'flex',
         flexDirection: 'column',
         flex: 1,
-        maxWidth: {xl: 1650},
-        mx: {xl: 'auto'},
-        width: {xl: '100%'},
+        maxWidth: { xl: 1650 },
+        mx: { xl: 'auto' },
+        width: { xl: '100%' },
       }}
       {...rest}
     >

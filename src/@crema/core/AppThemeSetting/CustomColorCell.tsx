@@ -1,10 +1,11 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import CheckIcon from '@mui/icons-material/Check';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import CheckIcon from '@mui/icons-material/Check';
+import { PaletteOptions, SimplePaletteColorOptions } from '@mui/material';
+import Box from '@mui/material/Box';
+import React from 'react';
+import { useThemeContext } from '../../../providers/AppContextProvider/ThemeContextProvider';
 import IntlMessages from '../../utility/IntlMessages';
-import {useThemeContext} from '../../utility/AppContextProvider/ThemeContextProvider';
-import {ThemeColorsProps} from './ThemeColors';
+import { ThemeColorsProps } from './ThemeColors';
 
 interface CustomColorCellTypes {
   themeColorSet: ThemeColorsProps;
@@ -15,7 +16,7 @@ const CustomColorCell: React.FC<CustomColorCellTypes> = ({
   themeColorSet,
   updateThemeColors,
 }) => {
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
   return (
     <Box
       onClick={() => {
@@ -43,9 +44,11 @@ const CustomColorCell: React.FC<CustomColorCellTypes> = ({
           }}
         >
           Primary
-          {theme.palette.primary.main === themeColorSet.primary.main &&
-          theme.palette.secondary.main === themeColorSet.secondary.main &&
-          theme.palette.mode === themeColorSet.mode ? (
+          {(theme.palette?.primary as SimplePaletteColorOptions).main ===
+            themeColorSet.primary.main &&
+          (theme.palette?.secondary as SimplePaletteColorOptions).main ===
+            themeColorSet.secondary.main &&
+          (theme.palette as PaletteOptions).mode === themeColorSet.mode ? (
             <Box
               sx={{
                 ml: 'auto',
@@ -57,7 +60,8 @@ const CustomColorCell: React.FC<CustomColorCellTypes> = ({
                 justifyContent: 'center',
                 overflow: 'hidden',
                 backgroundColor: '#fff',
-                color: theme.palette.primary.main,
+                color: (theme.palette?.primary as SimplePaletteColorOptions)
+                  .main,
               }}
             >
               <CheckIcon
@@ -117,7 +121,7 @@ const CustomColorCell: React.FC<CustomColorCellTypes> = ({
           Background
         </Box>
       </Box>
-      <Box sx={{pt: 2, px: 3, pb: 3}}>{themeColorSet.title}</Box>
+      <Box sx={{ pt: 2, px: 3, pb: 3 }}>{themeColorSet.title}</Box>
     </Box>
   );
 };

@@ -1,4 +1,3 @@
-import { el } from 'date-fns/locale';
 import { useCommon } from 'hooks/useCommon';
 import { useRoles } from 'hooks/useRoles';
 import React, {
@@ -14,7 +13,7 @@ import {
   githubAuthProvider,
   googleAuthProvider,
   twitterAuthProvider,
-} from '.';
+} from '../../services/firebase';
 
 export interface AuthUser {
   uid?: string;
@@ -93,7 +92,7 @@ const FirebaseAuthProvider = ({ children }: FirebaseAuthProviderProps) => {
     if (finalData.user && finalData.user.uid) {
       const tokenResult = await auth.currentUser?.getIdTokenResult();
 
-      const currentUserRole = tokenResult?.claims.role ?? 'User';
+      const currentUserRole = (tokenResult?.claims.role ?? 'User') as string;
 
       switch (currentUserRole) {
         case 'Admin':
@@ -101,20 +100,22 @@ const FirebaseAuthProvider = ({ children }: FirebaseAuthProviderProps) => {
           break;
 
         case 'User':
-          //Search for user custom permissions
+          // Search for user custom permissions
           finalData.user.role = {
             roleName: currentUserRole,
           };
           break;
 
         default:
-          //All other Users search first for the Role and then their custom permissions
-          const rolePermissions = await fetchRole(currentUserRole);
+          // All other Users search first for the Role and then their custom permissions
+          {
+            const rolePermissions = await fetchRole(currentUserRole);
 
-          finalData.user.role = {
-            ...rolePermissions,
-            roleName: currentUserRole,
-          };
+            finalData.user.role = {
+              ...rolePermissions,
+              roleName: currentUserRole,
+            };
+          }
           break;
       }
       finalData.user.token = tokenResult?.token;
@@ -182,14 +183,14 @@ const FirebaseAuthProvider = ({ children }: FirebaseAuthProviderProps) => {
     try {
       const { user } = await auth.signInWithEmailAndPassword(email, password);
       fetchSuccess();
-      if (!user?.emailVerified) {
+      if (!user?.emailVerified && user?.email) {
         await user?.sendEmailVerification({
           url: window.location.origin + process.env.NEXT_PUBLIC_LOGIN,
           handleCodeInApp: true,
         });
         showAlert({
           title: 'Email is not confirmed',
-          description: `An email was sent to ${user?.email} with instructions to confirm your email.`,
+          description: `An email was sent to ${user.email} with instructions to confirm your email.`,
           redirectOnClose: process.env.NEXT_PUBLIC_LOGIN,
         });
       }
@@ -206,16 +207,13 @@ const FirebaseAuthProvider = ({ children }: FirebaseAuthProviderProps) => {
   }: SignUpProps) => {
     fetchStart();
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password,
-      );
+      await auth.createUserWithEmailAndPassword(email, password);
 
-      await auth!.currentUser!.sendEmailVerification({
+      await auth.currentUser?.sendEmailVerification({
         url: window.location.origin + process.env.NEXT_PUBLIC_LOGIN,
         handleCodeInApp: true,
       });
-      await auth!.currentUser!.updateProfile({
+      await auth.currentUser?.updateProfile({
         displayName: name,
       });
       fetchSuccess();

@@ -1,4 +1,4 @@
-import {ConnectionObj, MessageObj} from '../models/apps/Chat';
+import { ConnectionObj, MessageObj } from '../models/apps/Chat';
 
 export const ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';

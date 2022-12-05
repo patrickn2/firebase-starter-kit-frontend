@@ -1,25 +1,25 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import clsx from 'clsx';
-import {CustomizerItemWrapper, StyledToggleButton} from '../index.style';
-import IntlMessages from '../../../utility/IntlMessages';
-import {ThemeStyle} from '../../../../shared/constants/AppEnums';
+import React from 'react';
 import {
   useThemeActionsContext,
   useThemeContext,
-} from '../../../utility/AppContextProvider/ThemeContextProvider';
+} from '../../../../providers/AppContextProvider/ThemeContextProvider';
+import { ThemeStyle } from '../../../../shared/constants/AppEnums';
+import IntlMessages from '../../../utility/IntlMessages';
+import { CustomizerItemWrapper, StyledToggleButton } from '../index.style';
 
 const ThemeStyles = () => {
-  const {themeStyle} = useThemeContext();
-  const {updateThemeStyle} = useThemeActionsContext();
+  const { themeStyle } = useThemeContext();
+  const { updateThemeStyle } = useThemeActionsContext();
 
   const onStyleChange = (event: any, themeStyle: string) => {
     if (themeStyle) updateThemeStyle(themeStyle);
   };
   return (
     <CustomizerItemWrapper>
-      <Box component='h4' sx={{mb: 2}}>
+      <Box component='h4' sx={{ mb: 2 }}>
         <IntlMessages id='customizer.themeStyle' />
       </Box>
       <ToggleButtonGroup

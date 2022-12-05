@@ -37,7 +37,7 @@ export interface GetRecentOrdersAction {
 
 export interface GetCustomersAction {
   type: typeof GET_CUSTOMERS;
-  payload: {customers: CustomersData[]; customerCount: number};
+  payload: { customers: CustomersData[]; customerCount: number };
 }
 
 export interface GetCartItemsAction {

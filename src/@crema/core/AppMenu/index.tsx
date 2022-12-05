@@ -1,8 +1,8 @@
-import React from 'react';
-import MenuItem from '@mui/material/MenuItem';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MenuItem from '@mui/material/MenuItem';
+import React from 'react';
 
 const options = ['View More', 'Update Data', 'Clear Data'];
 const AppMenu = () => {
@@ -20,7 +20,7 @@ const AppMenu = () => {
   return (
     <>
       <IconButton
-        style={{height: 30, width: 30}}
+        style={{ height: 30, width: 30 }}
         aria-label='more'
         onClick={handleClick}
         size='large'

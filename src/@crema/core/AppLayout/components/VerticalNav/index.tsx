@@ -1,12 +1,11 @@
-import React from 'react';
 import List from '@mui/material/List';
-
+import React from 'react';
 import routesConfig, {
   RouterConfigData,
 } from '../../../../../modules/routesConfig';
-import NavVerticalGroup from './VerticalNavGroup';
 import VerticalCollapse from './VerticalCollapse';
 import VerticalItem from './VerticalItem';
+import NavVerticalGroup from './VerticalNavGroup';
 
 const VerticalNav = () => {
   return (

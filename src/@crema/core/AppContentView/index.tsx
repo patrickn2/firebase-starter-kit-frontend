@@ -1,16 +1,19 @@
-import React, {ReactNode} from 'react';
 import Box from '@mui/material/Box';
-import AppContentViewWrapper from './AppContentViewWrapper';
-import {SxProps} from '@mui/system';
-import AppFooter from '../AppLayout/components/AppFooter';
+import { SxProps } from '@mui/system';
+import React, { ReactNode } from 'react';
 import AppErrorBoundary from '../AppErrorBoundary';
+import AppFooter from '../AppLayout/components/AppFooter';
+import AppContentViewWrapper from './AppContentViewWrapper';
 
 interface AppContentViewProps {
   sxStyle?: SxProps;
   children: ReactNode;
 }
 
-const AppContentView: React.FC<AppContentViewProps> = ({sxStyle, children}) => {
+const AppContentView: React.FC<AppContentViewProps> = ({
+  sxStyle,
+  children,
+}) => {
   return (
     <AppContentViewWrapper>
       <Box
@@ -18,7 +21,7 @@ const AppContentView: React.FC<AppContentViewProps> = ({sxStyle, children}) => {
           display: 'flex',
           flex: 1,
           flexDirection: 'column',
-          p: {xs: 5, md: 7.5, xl: 12.5},
+          p: { xs: 5, md: 7.5, xl: 12.5 },
           ...sxStyle,
         }}
         className='app-content'

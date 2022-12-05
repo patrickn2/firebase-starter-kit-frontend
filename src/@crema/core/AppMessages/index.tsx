@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import {IconButton, Theme} from '@mui/material';
-import AppTooltip from '../AppTooltip';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import Drawer from '@mui/material/Drawer';
-import AppMessageContent from './AppMessageContent';
-import {alpha} from '@mui/material/styles';
+import { IconButton, Theme } from '@mui/material';
 import Box from '@mui/material/Box';
-import {SxProps} from '@mui/system';
+import Drawer from '@mui/material/Drawer';
+import { alpha } from '@mui/material/styles';
+import { SxProps } from '@mui/system';
+import React, { useState } from 'react';
+import AppTooltip from '../AppTooltip';
+import AppMessageContent from './AppMessageContent';
 
 interface AppMessagesProps {
   sxMessageContentStyle?: SxProps<Theme>;

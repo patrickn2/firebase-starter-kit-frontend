@@ -1,4 +1,3 @@
-import React, {ReactNode} from 'react';
 import {
   alpha,
   Box,
@@ -7,7 +6,8 @@ import {
   CardContent,
   CardMedia,
 } from '@mui/material';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import React, { ReactNode } from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 interface AppCardProps {
   sxStyle?: any;
@@ -36,8 +36,11 @@ const AppCardMedia: React.FC<AppCardProps> = ({
   ...rest
 }) => {
   return (
-    <Card sx={{display: 'flex', flexDirection: 'column', ...sxStyle}} {...rest}>
-      <Box sx={{position: 'relative'}}>
+    <Card
+      sx={{ display: 'flex', flexDirection: 'column', ...sxStyle }}
+      {...rest}
+    >
+      <Box sx={{ position: 'relative' }}>
         <CardMedia
           component='img'
           image={cardMedia}

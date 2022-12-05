@@ -1,23 +1,23 @@
-import {PaletteColorOptions} from '@mui/material';
+import { PaletteColorOptions } from '@mui/material';
 
 export interface CoinGraphData {
   bitcoin: {
-    yearlyData: {month: string; amount: number}[];
-    monthlyData: {date: string; amount: number}[];
-    weeklyData: {day: string; amount: number}[];
-    dailyData: {time: string; amount: number}[];
+    yearlyData: { month: string; amount: number }[];
+    monthlyData: { date: string; amount: number }[];
+    weeklyData: { day: string; amount: number }[];
+    dailyData: { time: string; amount: number }[];
   };
   litecoin: {
-    yearlyData: {month: string; amount: number}[];
-    monthlyData: {date: string; amount: number}[];
-    weeklyData: {day: string; amount: number}[];
-    dailyData: {time: string; amount: number}[];
+    yearlyData: { month: string; amount: number }[];
+    monthlyData: { date: string; amount: number }[];
+    weeklyData: { day: string; amount: number }[];
+    dailyData: { time: string; amount: number }[];
   };
   ripple: {
-    yearlyData: {month: string; amount: number}[];
-    monthlyData: {date: string; amount: number}[];
-    weeklyData: {day: string; amount: number}[];
-    dailyData: {time: string; amount: number}[];
+    yearlyData: { month: string; amount: number }[];
+    monthlyData: { date: string; amount: number }[];
+    weeklyData: { day: string; amount: number }[];
+    dailyData: { time: string; amount: number }[];
   };
 }
 

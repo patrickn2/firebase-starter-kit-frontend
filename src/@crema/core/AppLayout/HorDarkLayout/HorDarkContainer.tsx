@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface HorDarkContainerProps {
   children: ReactNode;
@@ -21,50 +21,50 @@ const HorDarkContainer: React.FC<HorDarkContainerProps> = ({
         backgroundColor: (theme) => theme.palette.background.default,
 
         '&.boxedLayout': {
-          maxWidth: {xl: 1480},
-          mx: {xl: 'auto'},
+          maxWidth: { xl: 1480 },
+          mx: { xl: 'auto' },
           boxShadow: 'none',
           borderLeft: '1px solid #e8e5dd',
           borderRight: '1px solid #e8e5dd',
-          pt: {xl: 0},
+          pt: { xl: 0 },
 
           '& .mainContent': {
-            position: {xl: 'static'},
+            position: { xl: 'static' },
           },
           '& .fixed-footer': {
-            position: {xl: 'sticky'},
+            position: { xl: 'sticky' },
           },
           '& .appMainFixedFooter': {
-            pb: {xl: 0},
+            pb: { xl: 0 },
           },
         },
         '&.framedLayout': {
-          padding: {xl: 5},
+          padding: { xl: 5 },
           backgroundColor: (theme) => theme.palette.primary.main,
 
           '& .horDarkWrapper': {
-            borderRadius: {xl: 3},
+            borderRadius: { xl: 3 },
           },
 
           '& .app-bar': {
-            borderTopLeftRadius: {xl: 12},
-            borderTopRightRadius: {xl: 12},
+            borderTopLeftRadius: { xl: 12 },
+            borderTopRightRadius: { xl: 12 },
             overflow: 'hidden',
           },
 
           '& .footer': {
-            borderBottomLeftRadius: {xl: 12},
-            borderBottomRightRadius: {xl: 12},
+            borderBottomLeftRadius: { xl: 12 },
+            borderBottomRightRadius: { xl: 12 },
           },
 
           '& .mainContent': {
-            position: {xl: 'static'},
+            position: { xl: 'static' },
           },
           '& .fixed-footer': {
-            position: {xl: 'sticky'},
+            position: { xl: 'sticky' },
           },
           '& .appMainFixedFooter': {
-            pb: {xl: 0},
+            pb: { xl: 0 },
           },
         },
       }}

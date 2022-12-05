@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {SketchPicker} from 'react-color';
 import Box from '@mui/material/Box';
+import React, { useState } from 'react';
+import { SketchPicker } from 'react-color';
 
 interface CustomColorPickerProps {
   title: string;

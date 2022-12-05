@@ -1,4 +1,4 @@
-import {PostObj, WallData} from '../models/apps/Wall';
+import { PostObj, WallData } from '../models/apps/Wall';
 
 export const CREATE_NEW_POST = 'CREATE_NEW_POST';
 export const GET_FEED_POSTS = 'GET_FEED_POSTS';

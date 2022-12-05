@@ -1,12 +1,11 @@
-import React, {ReactNode} from 'react';
-
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface AppsHeaderProps {
   children: ReactNode;
 }
 
-const AppsHeader: React.FC<AppsHeaderProps> = ({children}) => {
+const AppsHeader: React.FC<AppsHeaderProps> = ({ children }) => {
   return (
     <Box
       sx={{

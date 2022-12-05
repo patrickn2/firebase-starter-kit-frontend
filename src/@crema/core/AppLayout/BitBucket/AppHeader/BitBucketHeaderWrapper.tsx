@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import React, { ReactNode } from 'react';
 
 interface BitBucketHeaderWrapperProps {
   children: ReactNode;
@@ -14,7 +14,7 @@ const BitBucketHeaderWrapper: React.FC<BitBucketHeaderWrapperProps> = ({
   return (
     <Box
       sx={{
-        height: {xs: 56, sm: 70},
+        height: { xs: 56, sm: 70 },
         display: 'flex',
         alignItems: 'center',
         top: 0,
@@ -22,7 +22,7 @@ const BitBucketHeaderWrapper: React.FC<BitBucketHeaderWrapperProps> = ({
         right: 0,
         width: '100%',
         position: 'fixed',
-        px: {xs: 5, md: 7.5},
+        px: { xs: 5, md: 7.5 },
         zIndex: 999,
         backgroundColor: (theme) => theme.palette.background.paper,
         '& .menu-btn': {
@@ -33,7 +33,7 @@ const BitBucketHeaderWrapper: React.FC<BitBucketHeaderWrapperProps> = ({
           height: 35,
         },
         '& .logo-text': {
-          display: {xs: 'none', sm: 'block'},
+          display: { xs: 'none', sm: 'block' },
         },
       }}
       {...rest}

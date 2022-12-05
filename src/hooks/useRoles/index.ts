@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   createUpdateRole,
   CreateUpdateRoleParams,
@@ -6,11 +6,11 @@ import {
   fetchRole,
   fetchRoles,
 } from 'redux/slices/roles';
-import type { RootState } from 'redux/store';
+import { RootState, useAppDispatch } from 'redux/store';
 
 export function useRoles() {
   const state = useSelector((state: RootState) => state.roles);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return {
     roles: state.data,

@@ -1,4 +1,9 @@
-import {ConnectionObj, FolderObj, LabelObj, MailObj} from '../models/apps/Mail';
+import {
+  ConnectionObj,
+  FolderObj,
+  LabelObj,
+  MailObj,
+} from '../models/apps/Mail';
 
 export const GET_CONNECTION_LIST = 'GET_CONNECTION_LIST';
 export const GET_FOLDER_LIST = 'GET_FOLDER_LIST';
@@ -31,7 +36,7 @@ export interface GetMailLabelActions {
 
 export interface ComposeMailAction {
   type: typeof COMPOSE_MAIL;
-  payload: {data: MailObj; pathname: string};
+  payload: { data: MailObj; pathname: string };
 }
 
 export interface GetMailDetailAction {
@@ -67,7 +72,7 @@ export interface UpdateMailLabelAction {
 
 export interface UpdateMailStaredAction {
   type: typeof UPDATE_STARRED_STATUS;
-  payload: {data: MailObj[]; folderName: string};
+  payload: { data: MailObj[]; folderName: string };
 }
 
 export interface UpdateMailReadStatusAction {

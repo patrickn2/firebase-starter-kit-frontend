@@ -19,6 +19,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["src"],
+  "include": ["src", "src/@types/Utils.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,14 +1,14 @@
-import {CommonActionTypes} from './actions/Common.action';
-import {SettingsActionTypes} from './actions/Settings.action';
-import {DashboardActionTypes} from './actions/Dashboard.action';
-import {AuthActions} from './actions/Auth.actions';
-import {ChatActions} from './actions/Chat.actions';
-import {ContactActions} from './actions/Contact.actions';
-import {MailActions} from './actions/Mail.action';
-import {TaskActions} from './actions/Todo.action';
-import {WalltActions} from './actions/Wall.actions';
-import {ScrumboardActions} from './actions/Scrumboard.actions';
-import {UserListActions} from './actions/UserList.actions';
+import { AuthActions } from './actions/Auth.actions';
+import { ChatActions } from './actions/Chat.actions';
+import { CommonActionTypes } from './actions/Common.action';
+import { ContactActions } from './actions/Contact.actions';
+import { DashboardActionTypes } from './actions/Dashboard.action';
+import { MailActions } from './actions/Mail.action';
+import { ScrumboardActions } from './actions/Scrumboard.actions';
+import { SettingsActionTypes } from './actions/Settings.action';
+import { TaskActions } from './actions/Todo.action';
+import { UserListActions } from './actions/UserList.actions';
+import { WalltActions } from './actions/Wall.actions';
 
 export type AppActions =
   | CommonActionTypes

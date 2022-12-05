@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import {
   Grow,
   Icon,
@@ -8,16 +7,17 @@ import {
   ListItemText,
   Paper,
 } from '@mui/material';
+import Box from '@mui/material/Box';
 import clsx from 'clsx';
-import {Manager, Popper, Reference} from 'react-popper';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import { Manager, Popper, Reference } from 'react-popper';
+import { RouterConfigData } from '../../../../../modules/routesConfig';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
+import IntlMessages from '../../../../utility/IntlMessages';
+import ClientOnlyPortal from './ClientPortal';
 import HorizontalCollapse from './HorizontalCollapse';
 import HorizontalItem from './HorizontalItem';
-import Box from '@mui/material/Box';
-import IntlMessages from '../../../../utility/IntlMessages';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
-import ClientOnlyPortal from './ClientPortal';
-import {RouterConfigData} from '../../../../../modules/routesConfig';
-import {useRouter} from 'next/router';
 
 interface HorizontalCollapseProps {
   item: RouterConfigData;
@@ -27,7 +27,7 @@ interface HorizontalCollapseProps {
 
 const HorizontalGroup: React.FC<HorizontalCollapseProps> = (props) => {
   const [opened, setOpened] = useState<boolean>(false);
-  const {item, nestedLevel} = props;
+  const { item, nestedLevel } = props;
   const location = useRouter();
 
   const handleToggle = (open: boolean) => {
@@ -48,7 +48,7 @@ const HorizontalGroup: React.FC<HorizontalCollapseProps> = (props) => {
 
       if (
         parent.children[i].url === url ||
-        url.includes(parent!.children![i].url!)
+        url.includes(parent.children[i].url ?? '')
       ) {
         return true;
       }
@@ -60,7 +60,7 @@ const HorizontalGroup: React.FC<HorizontalCollapseProps> = (props) => {
   return (
     <Manager>
       <Reference>
-        {({ref}) => (
+        {({ ref }) => (
           <ListItem
             ref={ref}
             className={clsx(
@@ -103,7 +103,7 @@ const HorizontalGroup: React.FC<HorizontalCollapseProps> = (props) => {
       </Reference>
       <ClientOnlyPortal selector='#root'>
         <Popper placement={nestedLevel === 0 ? 'bottom-start' : 'right'}>
-          {({ref, style, placement}) =>
+          {({ ref, style, placement }) =>
             opened && (
               <Box
                 ref={ref}

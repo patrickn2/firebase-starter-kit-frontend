@@ -1,6 +1,6 @@
-import React, {CSSProperties, ReactNode} from 'react';
-import GridView from './GridView';
+import React, { CSSProperties, ReactNode } from 'react';
 import GridFooter from './GridFooter';
+import GridView from './GridView';
 
 interface AppCardProps {
   loading?: boolean;
@@ -19,7 +19,7 @@ interface AppCardProps {
   [x: string]: any;
 }
 
-const AppGrid: React.FC<AppCardProps> = ({footerProps, ...rest}) => {
+const AppGrid: React.FC<AppCardProps> = ({ footerProps, ...rest }) => {
   return (
     <GridView
       {...rest}

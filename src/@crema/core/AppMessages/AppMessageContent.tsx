@@ -1,14 +1,14 @@
-import React from 'react';
-import messages from '@crema/services/db/messages';
-import {Box, IconButton, Theme} from '@mui/material';
-import MessageItem from './MessageItem';
-import List from '@mui/material/List';
-import Button from '@mui/material/Button';
 import AppScrollbar from '@crema/core/AppScrollbar';
+import messages from '@crema/services/db/messages';
 import IntlMessages from '@crema/utility/IntlMessages';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import { Box, IconButton, Theme } from '@mui/material';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import {SxProps} from '@mui/system';
+import { SxProps } from '@mui/system';
+import React from 'react';
+import MessageItem from './MessageItem';
 
 interface AppMessageContentProps {
   onClose: () => void;
@@ -36,7 +36,7 @@ const AppMessageContent: React.FC<AppMessageContentProps> = ({
           alignItems: 'center',
           borderBottom: 1,
           borderBottomColor: (theme) => theme.palette.divider,
-          minHeight: {xs: 56, sm: 70},
+          minHeight: { xs: 56, sm: 70 },
         }}
       >
         <Typography component='h3'>
@@ -57,7 +57,7 @@ const AppMessageContent: React.FC<AppMessageContentProps> = ({
       </Box>
       <AppScrollbar
         sx={{
-          height: {xs: 'calc(100% - 96px)', sm: 'calc(100% - 110px)'},
+          height: { xs: 'calc(100% - 96px)', sm: 'calc(100% - 110px)' },
         }}
       >
         <List

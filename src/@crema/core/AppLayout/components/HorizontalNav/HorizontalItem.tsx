@@ -1,13 +1,13 @@
-import React from 'react';
-import {Icon, ListItem, ListItemText} from '@mui/material';
-import clsx from 'clsx';
-import IntlMessages from '../../../../utility/IntlMessages';
-import Box from '@mui/material/Box';
+import { Icon, ListItem, ListItemText } from '@mui/material';
 import Badge from '@mui/material/Badge';
-import {RouterConfigData} from '../../../../../modules/routesConfig';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
-import {useRouter} from 'next/router';
+import Box from '@mui/material/Box';
+import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { RouterConfigData } from '../../../../../modules/routesConfig';
+import { useSidebarContext } from '../../../../../providers/AppContextProvider/SidebarContextProvider';
+import IntlMessages from '../../../../utility/IntlMessages';
 
 interface HorizontalItemProps {
   item: RouterConfigData;
@@ -16,11 +16,11 @@ interface HorizontalItemProps {
 }
 
 const HorizontalItem: React.FC<HorizontalItemProps> = (props) => {
-  const {item, dense} = props;
+  const { item, dense } = props;
 
   const location = useRouter();
   const active = isUrlInChildren(item, location.pathname);
-  const {sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor} =
+  const { sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor } =
     useSidebarContext();
 
   function isUrlInChildren(parent: RouterConfigData, url: string) {
@@ -37,7 +37,7 @@ const HorizontalItem: React.FC<HorizontalItemProps> = (props) => {
 
       if (
         parent.children[i].url === url ||
-        url.includes(parent!.children![i].url!)
+        url.includes(parent.children[i].url ?? '')
       ) {
         return true;
       }
@@ -48,7 +48,7 @@ const HorizontalItem: React.FC<HorizontalItemProps> = (props) => {
 
   const router = useRouter();
   return (
-    <Link href={item.url!} as={item.as}>
+    <Link href={item.url ?? ''} as={item.as}>
       <ListItem
         className={clsx('navItemSubmenu', dense && 'dense', {
           active: item.url === router.pathname,
@@ -87,7 +87,7 @@ const HorizontalItem: React.FC<HorizontalItemProps> = (props) => {
             sx={{
               color: active ? sidebarMenuSelectedTextColor : 'action',
               mr: 3,
-              fontSize: {xs: 16, xl: 18},
+              fontSize: { xs: 16, xl: 18 },
             }}
           >
             {item.icon}

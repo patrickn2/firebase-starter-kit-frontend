@@ -1,11 +1,10 @@
-import React, {ReactNode} from 'react';
+import { styled } from '@mui/material/styles';
 import TableRow from '@mui/material/TableRow';
 import PropTypes from 'prop-types';
+import React, { ReactNode } from 'react';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
-import {styled} from '@mui/material/styles';
-import {Fonts} from '../../../shared/constants/AppEnums';
-
-const TableHeaderRow = styled(TableRow)(({theme}) => {
+const TableHeaderRow = styled(TableRow)(({ theme }) => {
   return {
     '& th': {
       fontSize: 14,
@@ -28,7 +27,7 @@ interface TableHeaderProps {
   [x: string]: any;
 }
 
-const TableHeader: React.FC<TableHeaderProps> = ({children, ...rest}) => {
+const TableHeader: React.FC<TableHeaderProps> = ({ children, ...rest }) => {
   return <TableHeaderRow {...rest}>{children}</TableHeaderRow>;
 };
 

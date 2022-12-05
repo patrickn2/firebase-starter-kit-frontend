@@ -1,14 +1,12 @@
-import {IntlShape, useIntl} from 'react-intl';
-import {useMediaQuery, useTheme} from '@mui/material';
-import {ReactNode} from 'react';
+import { useMediaQuery, useTheme } from '@mui/material';
+import { ReactNode } from 'react';
+import { IntlShape, useIntl } from 'react-intl';
 
 export const useWidth = () => {
   const theme = useTheme();
   const keys = [...theme.breakpoints.keys].reverse();
-  // @ts-ignore
   return (
     keys.reduce((output, key: any) => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
       const matches = useMediaQuery(theme.breakpoints.up(key));
       return !output && matches ? key : output;
     }, null) || 'xs'
@@ -16,10 +14,10 @@ export const useWidth = () => {
 };
 export const getFileSize = (bytes: number) => {
   if (bytes === 0) return '0 Bytes';
-  let k = 1024,
-    dm = 2,
-    sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-    i = Math.floor(Math.log(bytes) / Math.log(k));
+  const k = 1024;
+  const dm = 2;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 };
 
@@ -50,7 +48,11 @@ export const multiPropsFilter = (
 // 'intl' service singleton reference
 let intl: IntlShape;
 
-export const IntlGlobalProvider = ({children}: {children: ReactNode}): any => {
+export const IntlGlobalProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}): any => {
   intl = useIntl();
   // Keep the 'intl' service reference
   return children;

@@ -1,24 +1,23 @@
 import styled from '@emotion/styled';
-import { lighten } from '@mui/material';
+import { lighten, ThemeOptions } from '@mui/material';
 import Tooltip, { tooltipClasses, TooltipProps } from '@mui/material/Tooltip';
 import Zoom from '@mui/material/Zoom';
-import { useTheme } from '@mui/styles';
+import { useThemeContext } from 'providers/AppContextProvider/ThemeContextProvider';
 import React from 'react';
-import { CremaTheme } from '../../types/AppContextPropsType';
 
 const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }: { theme: CremaTheme }) => ({
+))(({ theme }: { theme: ThemeOptions }) => ({
   [`& .${tooltipClasses.arrow}`]: {
-    color: lighten(theme.palette.background.default, 0.25),
+    color: lighten(theme.palette?.background?.default ?? '', 0.25),
     '&:before': {
-      boxShadow: theme.shadows[1],
+      boxShadow: theme.shadows?.[1],
     },
   },
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: lighten(theme.palette.background.default, 0.25),
-    color: theme.palette.text.primary,
-    boxShadow: theme.shadows[1],
+    backgroundColor: lighten(theme.palette?.background?.default ?? '', 0.25),
+    color: theme.palette?.text?.primary,
+    boxShadow: theme.shadows?.[1],
     fontSize: 11,
   },
 }));
@@ -46,8 +45,7 @@ const AppTooltip: React.FC<AppTooltipProps> = ({
   placement = 'top',
   children,
 }) => {
-  // @ts-ignore
-  const { theme } = useTheme();
+  const { theme } = useThemeContext();
   return (
     <LightTooltip
       title={title}

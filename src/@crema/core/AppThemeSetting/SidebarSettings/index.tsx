@@ -1,24 +1,26 @@
-import React from 'react';
+import CheckIcon from '@mui/icons-material/Check';
 import Box from '@mui/material/Box';
 import Switch from '@mui/material/Switch';
-import CheckIcon from '@mui/icons-material/Check';
-import {CustomizerItemWrapper} from '../index.style';
+import Image from 'next/image';
+import React from 'react';
+import {
+  useSidebarActionsContext,
+  useSidebarContext,
+} from '../../../../providers/AppContextProvider/SidebarContextProvider';
 import {
   sidebarBgImages,
   sidebarColors,
 } from '../../../services/db/navigationStyle';
-import {
-  useSidebarActionsContext,
-  useSidebarContext,
-} from '../../../utility/AppContextProvider/SidebarContextProvider';
-import NavMenuStyle from './NavMenuStyle';
-import MenuColorCell from './MenuColorCell';
 import AppGrid from '../../AppGrid';
+import { CustomizerItemWrapper } from '../index.style';
+import MenuColorCell from './MenuColorCell';
+import NavMenuStyle from './NavMenuStyle';
 
 const SidebarSettings = () => {
-  const {sidebarBgImage, isSidebarBgImage} = useSidebarContext();
+  const { sidebarBgImage, isSidebarBgImage } = useSidebarContext();
 
-  const {updateSidebarBgImage, setSidebarBgImage} = useSidebarActionsContext();
+  const { updateSidebarBgImage, setSidebarBgImage } =
+    useSidebarActionsContext();
 
   const onToggleSidebarImage = () => {
     setSidebarBgImage(!isSidebarBgImage);
@@ -36,7 +38,7 @@ const SidebarSettings = () => {
         }}
       >
         <Box component='h4'>Sidebar Images</Box>
-        <Box component='span' sx={{ml: 'auto'}}>
+        <Box component='span' sx={{ ml: 'auto' }}>
           <Switch
             className='customize-switch'
             checked={isSidebarBgImage}
@@ -78,7 +80,7 @@ const SidebarSettings = () => {
                   }}
                   onClick={() => updateSidebarBgImage(imagesObj.id)}
                 >
-                  <img src={imagesObj.image} alt='nav' />
+                  <Image src={imagesObj.image} alt='nav' />
                   {sidebarBgImage === imagesObj.id ? (
                     <Box
                       sx={{
@@ -110,7 +112,7 @@ const SidebarSettings = () => {
           })}
         </Box>
       ) : null}
-      <Box component='h4' sx={{mb: 3}}>
+      <Box component='h4' sx={{ mb: 3 }}>
         Sidebar Colors
       </Box>
       <AppGrid

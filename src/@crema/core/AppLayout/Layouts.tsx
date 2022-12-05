@@ -1,17 +1,17 @@
-import Default from './DefaultLayout';
-import {NavStyle} from 'shared/constants/AppEnums';
+import { NavStyle } from 'shared/constants/AppEnums';
 import BitBucket from './BitBucket';
-import Standard from './Standard';
+import Default from './DefaultLayout';
 import DrawerLayout from './DrawerLayout';
-import MiniSidebar from './MiniSidebar';
-import MiniSidebarToggle from './MiniSidebarToggle';
-import HeaderUserLayout from './UserHeader';
-import HeaderUserMiniLayout from './UserMiniHeader';
+import HorDarkLayout from './HorDarkLayout';
 import HorDefault from './HorDefault';
 import HorHeaderFixed from './HorHeaderFixed';
-import HorDarkLayout from './HorDarkLayout';
+import MiniSidebar from './MiniSidebar';
+import MiniSidebarToggle from './MiniSidebarToggle';
+import Standard from './Standard';
+import HeaderUserLayout from './UserHeader';
+import HeaderUserMiniLayout from './UserMiniHeader';
 
-const Layouts: any = {
+const Layouts = {
   [NavStyle.DEFAULT]: Default,
   [NavStyle.BIT_BUCKET]: BitBucket,
   [NavStyle.STANDARD]: Standard,

@@ -1,9 +1,4 @@
-import {
-  Action,
-  AnyAction,
-  createAsyncThunk,
-  createSlice,
-} from '@reduxjs/toolkit';
+import { Action, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { UserRecord } from 'firebase-functions/v1/auth';
 import * as api from 'redux/api/functions/users';
 
@@ -13,7 +8,7 @@ export interface BaseResponse {
 }
 
 export interface FetchUsersResponse extends BaseResponse {
-  data?: UserRecord[];
+  data?: Mutable<UserRecord>[];
   perPage?: number;
   page?: number;
   totalPages?: number;
@@ -97,7 +92,7 @@ interface RejectedAction extends Action {
   error: Error;
 }
 
-const isRejectedAction = (action: AnyAction): action is RejectedAction => {
+const isRejectedAction = (action: Action): action is RejectedAction => {
   return action.type.endsWith('rejected');
 };
 
@@ -107,7 +102,7 @@ export const usersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      //Fetch Roles
+      // Fetch Roles
       .addCase(fetchUsers.pending, (state) => {
         state.loading = true;
       })
@@ -122,21 +117,21 @@ export const usersSlice = createSlice({
 
       .addCase(switchUserRole.fulfilled, (state, { payload }) => {
         const index =
-          state.data?.data?.findIndex(
-            (user: UserRecord) => user.uid === payload.userId,
-          ) ?? -1;
+          state.data?.data?.findIndex((user) => user.uid === payload.userId) ??
+          -1;
+
         if (index !== -1)
-          (state.data?.data as UserRecord[])[index].customClaims.role =
-            payload.roleName;
+          (state.data?.data?.[index] as Mutable<UserRecord>).customClaims = {
+            role: payload.roleName,
+          };
       })
 
       .addCase(banUnbanUser.fulfilled, (state, { payload }) => {
         const index =
-          state.data?.data?.findIndex(
-            (user: UserRecord) => user.uid === payload.userId,
-          ) ?? -1;
+          state.data?.data?.findIndex((user) => user.uid === payload.userId) ??
+          -1;
         if (index !== -1)
-          (state.data?.data as UserRecord[])[index].disabled =
+          (state.data?.data?.[index] as Mutable<UserRecord>).disabled =
             payload.operation === 'ban' ? true : false;
       })
 

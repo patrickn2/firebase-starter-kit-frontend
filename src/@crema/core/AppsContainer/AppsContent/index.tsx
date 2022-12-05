@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {AppScrollbar} from '../../../index';
+import React, { ReactNode } from 'react';
+import { AppScrollbar } from '../../../index';
 
 interface AppsContentProps {
   children: ReactNode;

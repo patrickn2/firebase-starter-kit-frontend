@@ -1,4 +1,4 @@
-import {compose} from 'redux';
+import { compose } from 'redux';
 import withData from './withData';
 import withLayout from './withLayout';
 

@@ -1,14 +1,14 @@
-import React, {ReactNode} from 'react';
+import { alpha } from '@mui/material';
 import Box from '@mui/material/Box';
-import {alpha} from '@mui/material';
-import {ThemeMode} from '../../../../../shared/constants/AppEnums';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import React, { ReactNode } from 'react';
+import { useSidebarContext } from '../../../../../providers/AppContextProvider/SidebarContextProvider';
+import { ThemeMode } from '../../../../../shared/constants/AppEnums';
 
 interface SidebarBgWrapperProps {
   children: ReactNode;
 }
 
-const SidebarBgWrapper: React.FC<SidebarBgWrapperProps> = ({children}) => {
+const SidebarBgWrapper: React.FC<SidebarBgWrapperProps> = ({ children }) => {
   const {
     sidebarBgColor,
     sidebarTextColor,

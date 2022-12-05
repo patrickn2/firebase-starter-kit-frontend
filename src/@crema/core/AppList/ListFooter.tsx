@@ -1,5 +1,5 @@
+import { Box, CircularProgress, Typography } from '@mui/material';
 import React from 'react';
-import {Box, CircularProgress, Typography} from '@mui/material';
 
 interface ListFooterProps {
   loading?: boolean;
@@ -24,7 +24,7 @@ const ListFooter: React.FC<ListFooterProps> = ({
       }}
     >
       <CircularProgress size={16} />
-      <Box component='span' sx={{ml: 2}}>
+      <Box component='span' sx={{ ml: 2 }}>
         Loading...
       </Box>
     </Box>
