@@ -22,8 +22,11 @@ export function useUsers() {
     users: state.data,
     loading: state.loading,
     fetchUsers: async (params: FetchUsersParams): Promise<FetchUsersResponse> =>
-      (dispatch(fetchUsers({ ...params, tokenId: user?.token ?? '' })) as any)
-        .payload,
+      (
+        (await dispatch(
+          fetchUsers({ ...params, tokenId: user?.token ?? '' }),
+        )) as any
+      ).payload,
     switchUserRole: async (
       params: SwitchUserRoleParams,
     ): Promise<SwitchUserRoleResponse> =>

@@ -1,3 +1,4 @@
+import { AppLoader } from '@crema';
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
@@ -17,13 +18,14 @@ import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { format } from 'date-fns';
 import { UserRecord } from 'firebase-admin/auth';
 import { useAuthUser } from 'hooks/useAuthUser';
-import { useRoles } from 'hooks/useRoles';
-import { useUsers } from 'hooks/useUsers';
 import { useEffect, useMemo, useState } from 'react';
+import { useRoles } from '../../../hooks/useRoles';
+import { useUsers } from '../../../hooks/useUsers';
 
 const AdminUsers = () => {
   const { canDo } = useAuthUser();
-  const { users, fetchUsers, switchUserRole, banUnbanUser } = useUsers();
+  const { users, fetchUsers, switchUserRole, banUnbanUser, loading } =
+    useUsers();
   const { roles, fetchRoles } = useRoles();
   const [disabledRoleSelector, setDisabledRoleSelector] = useState<
     null | string
@@ -199,27 +201,33 @@ const AdminUsers = () => {
 
   return (
     <>
-      <Typography
-        variant='h2'
-        sx={{
-          paddingLeft: '20px',
-          paddingBottom: '10px',
-        }}
-      >
-        Users
-      </Typography>
-      <Container maxWidth='xl'>
-        <div style={{ height: 400, width: '100%' }}>
-          {rows ? (
-            <DataGrid
-              rows={rows}
-              columns={columns}
-              pageSize={50}
-              checkboxSelection
-            />
-          ) : null}
-        </div>
-      </Container>
+      {loading ? (
+        <AppLoader />
+      ) : (
+        <>
+          <Typography
+            variant='h2'
+            sx={{
+              paddingLeft: '20px',
+              paddingBottom: '10px',
+            }}
+          >
+            Users
+          </Typography>
+          <Container maxWidth='xl'>
+            <div style={{ height: 400, width: '100%' }}>
+              {rows ? (
+                <DataGrid
+                  rows={rows}
+                  columns={columns}
+                  pageSize={50}
+                  checkboxSelection
+                />
+              ) : null}
+            </div>
+          </Container>
+        </>
+      )}
     </>
   );
 };
