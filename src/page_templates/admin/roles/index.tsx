@@ -21,7 +21,7 @@ import {
 } from '@mui/material';
 import DeleteDialog from 'components/alertsNDialogs/ConfirmationDialog';
 import { useRoles } from 'hooks/useRoles';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import RoleForm, { UseRoleFormProps } from './roleForm';
 import * as S from './styles';
 
@@ -32,11 +32,7 @@ const Roles = () => {
     null,
   );
   const [editRole, setEditRole] = useState<UseRoleFormProps | null>(null);
-  const { roles, deleteRole, fetchRoles } = useRoles();
-
-  useEffect(() => {
-    fetchRoles();
-  }, []);
+  const { roles, deleteRole } = useRoles(true);
 
   const roleNameList = useMemo(() => {
     return roles.reduce((acc: string[], cur: Role) => {

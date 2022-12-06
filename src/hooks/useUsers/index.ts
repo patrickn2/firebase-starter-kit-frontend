@@ -1,4 +1,5 @@
 import { useAuthUser } from 'hooks/useAuthUser';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {
   banUnbanUser,
@@ -13,20 +14,28 @@ import {
 } from 'redux/slices/users';
 import { RootState, useAppDispatch } from 'redux/store';
 
-export function useUsers() {
+export function useUsers(fetchUsersParams?: FetchUsersParams) {
   const { user } = useAuthUser();
   const state = useSelector((state: RootState) => state.users);
   const dispatch = useAppDispatch();
 
+  const fetchUsersFunc = async (
+    params: FetchUsersParams,
+  ): Promise<FetchUsersResponse> =>
+    (
+      (await dispatch(
+        fetchUsers({ ...params, tokenId: user?.token ?? '' }),
+      )) as any
+    ).payload;
+
+  useEffect(() => {
+    if (fetchUsersParams) fetchUsersFunc(fetchUsersParams);
+  }, []);
+
   return {
     users: state.data,
     loading: state.loading,
-    fetchUsers: async (params: FetchUsersParams): Promise<FetchUsersResponse> =>
-      (
-        (await dispatch(
-          fetchUsers({ ...params, tokenId: user?.token ?? '' }),
-        )) as any
-      ).payload,
+    fetchUsers: fetchUsersFunc,
     switchUserRole: async (
       params: SwitchUserRoleParams,
     ): Promise<SwitchUserRoleResponse> =>

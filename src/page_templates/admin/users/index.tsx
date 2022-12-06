@@ -18,26 +18,23 @@ import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { format } from 'date-fns';
 import { UserRecord } from 'firebase-admin/auth';
 import { useAuthUser } from 'hooks/useAuthUser';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useRoles } from '../../../hooks/useRoles';
 import { useUsers } from '../../../hooks/useUsers';
 
 const AdminUsers = () => {
   const { canDo } = useAuthUser();
-  const { users, fetchUsers, switchUserRole, banUnbanUser, loading } =
-    useUsers();
-  const { roles, fetchRoles } = useRoles();
+  const { users, switchUserRole, banUnbanUser, loading } = useUsers({
+    page: 1,
+    perPage: 2000,
+  });
+  const { roles } = useRoles(true);
   const [disabledRoleSelector, setDisabledRoleSelector] = useState<
     null | string
   >(null);
   const [disabledBanButton, setDisabledBanButton] = useState<null | string>(
     null,
   );
-
-  useEffect(() => {
-    fetchRoles();
-    fetchUsers({ page: 1, perPage: 2000 });
-  }, []);
 
   const handleRoleChange = async (roleName: string, userId: string) => {
     setDisabledRoleSelector(userId);
