@@ -1,4 +1,4 @@
-import AppLoader from '@crema/core/AppLoader';
+import AppLoader from 'components/AppLoader';
 import { useCommon } from 'hooks/useCommon';
 import { useRouter } from 'next/router';
 import AlertDialog from './AlertDialog';

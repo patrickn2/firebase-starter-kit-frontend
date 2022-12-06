@@ -1,8 +1,8 @@
 import Router, { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import AppLoader from '../../../components/AppLoader';
 import { useAuthUser } from '../../../hooks/useAuthUser';
 import { initialUrl } from '../../../shared/constants/AppConst';
-import AppLoader from '../../core/AppLoader';
 
 const withData = (ComposedComponent) => (props) => {
   const { user, isLoading } = useAuthUser();

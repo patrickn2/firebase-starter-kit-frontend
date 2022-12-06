@@ -1,4 +1,5 @@
 export { default as AppInfoView } from '../components/alertsNDialogs';
+export { default as AppLoader } from '../components/AppLoader';
 export { default as AppContextProvider } from '../providers/AppContextProvider';
 export { default as AppLocaleProvider } from '../providers/AppLocaleProvider';
 export { default as AppStyleProvider } from '../providers/AppStyleProvider';
@@ -19,7 +20,6 @@ export { default as AppGridContainer } from './core/AppGridContainer';
 export { default as AppLinearProgress } from './core/AppLinearProgress';
 export { default as AppList } from './core/AppList';
 export { default as AppLngSwitcher } from './core/AppLngSwitcher';
-export { default as AppLoader } from './core/AppLoader';
 export { default as AppMedialViewer } from './core/AppMedialViewer';
 export { default as AppMenu } from './core/AppMenu';
 export { default as AppMessages } from './core/AppMessages';

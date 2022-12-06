@@ -1,4 +1,4 @@
-import AppLoader from '@crema/core/AppLoader';
+import AppLoader from 'components/AppLoader';
 import React, { ReactNode } from 'react';
 
 interface AppSuspenseProps {

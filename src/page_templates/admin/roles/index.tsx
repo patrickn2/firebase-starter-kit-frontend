@@ -32,7 +32,7 @@ const Roles = () => {
     null,
   );
   const [editRole, setEditRole] = useState<UseRoleFormProps | null>(null);
-  const { roles, fetchRoles, deleteRole } = useRoles();
+  const { roles, deleteRole, fetchRoles } = useRoles();
 
   useEffect(() => {
     fetchRoles();
